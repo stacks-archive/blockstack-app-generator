@@ -4,6 +4,8 @@ var assert = require('yeoman-assert');
 var helpers = require('yeoman-test');
 
 describe('generator-blockstack:app', function () {
+  this.timeout(9000);
+
   before(function () {
     return helpers.run(path.join(__dirname, '../app'))
       .withPrompts({someAnswer: true})
