@@ -19,7 +19,8 @@ describe('generator-blockstack:app', function () {
       'server.js',
       'public/app.css',
       'public/app.js',
-      'public/index.html'
+      'public/index.html',
+      'public/robots.txt'
     ]);
   });
 });

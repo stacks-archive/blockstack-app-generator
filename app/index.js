@@ -30,22 +30,16 @@ module.exports = Generator.extend({
         this.destinationPath('package.json')
       );
     },
-    git: function () {
-      this.fs.copy(
-        this.templatePath('gitignore'),
-        this.destinationPath('.gitignore')
-      );
-    },
     editorConfig: function () {
       this.fs.copy(
         this.templatePath('editorconfig'),
         this.destinationPath('.editorconfig')
       );
     },
-    serverJS: function () {
+    gitignore: function () {
       this.fs.copy(
-        this.templatePath('server.js'),
-        this.destinationPath('server.js')
+        this.templatePath('gitignore'),
+        this.destinationPath('.gitignore')
       );
     },
     requiresJS: function () {
@@ -54,27 +48,33 @@ module.exports = Generator.extend({
         this.destinationPath('requires.js')
       );
     },
+    serverJS: function () {
+      this.fs.copy(
+        this.templatePath('server.js'),
+        this.destinationPath('server.js')
+      );
+    },
     styles: function () {
       this.fs.copy(
-        this.templatePath('app.css'),
+        this.templatePath('public/app.css'),
         this.destinationPath('public/app.css')
       );
     },
     scripts: function () {
       this.fs.copy(
-        this.templatePath('app.js'),
+        this.templatePath('public/app.js'),
         this.destinationPath('public/app.js')
       );
     },
     html: function () {
       this.fs.copy(
-        this.templatePath('index.html'),
+        this.templatePath('public/index.html'),
         this.destinationPath('public/index.html')
       );
     },
     misc: function () {
       this.fs.copy(
-        this.templatePath('robots.txt'),
+        this.templatePath('public/robots.txt'),
         this.destinationPath('public/robots.txt')
       );
     }
