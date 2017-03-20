@@ -1,5 +1,4 @@
-# Blockstack App Generator [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> 
+# Blockstack App Generator [![CircleCI][circleci-image]][circleci-url] [![NPM version][npm-image]][npm-url] [![Slack][slack-img]][slack-url] 
 
 ## Installation
 
@@ -28,11 +27,9 @@ yo blockstack
 MIT © [Blockstack](https://blockstack.com)
 
 
-[npm-image]: https://badge.fury.io/js/generator-blockstack.svg
-[npm-url]: https://npmjs.org/package/generator-blockstack
-[travis-image]: https://travis-ci.org//generator-blockstack.svg?branch=master
-[travis-url]: https://travis-ci.org//generator-blockstack
-[daviddm-image]: https://david-dm.org//generator-blockstack.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org//generator-blockstack
-[coveralls-image]: https://coveralls.io/repos//generator-blockstack/badge.svg
-[coveralls-url]: https://coveralls.io/r//generator-blockstack
+[npm-image]: https://img.shields.io/npm/v/generator-blockstack.svg
+[npm-url]: https://www.npmjs.com/package/generator-blockstack
+[circleci-image]: https://circleci.com/gh/blockstack/blockstack-app-generator.svg?style=shield&circle-token=:circle-token
+[circleci-url]: https://circleci.com/gh/blockstack/blockstack-app-generator/tree/master
+[slack-image]: http://slack.blockstack.org/badge.svg
+[slack-url]: http://slack.blockstack.org/
