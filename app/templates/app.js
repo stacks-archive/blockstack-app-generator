@@ -1,18 +1,18 @@
-$(document).ready(function() {
-  $('#signin-button').click(function() {
-    var authRequest = blockstack.makeAuthRequest()
+document.addEventListener("DOMContentLoaded", function(event) { 
+  document.getElementById('signin-button').addEventListener('click', function() {
+    var authRequest = blockstack.makeAuthRequest(null, window.location.origin)
     blockstack.redirectUserToSignIn(authRequest)
   })
-  $('#signout-button').click(function() {
+  document.getElementById('signout-button').addEventListener('click', function() {
     blockstack.signUserOut(window.location.origin)
   })
 
   function showProfile(profile) {
     var person = new blockstack.Person(profile)
-    $('#heading-name').html(person.name())
-    $('#avatar-image').attr('src', person.avatarUrl())
-    $('#section-1').hide()
-    $('#section-2').show()
+    document.getElementById('heading-name').innerHTML = person.name()
+    document.getElementById('avatar-image').setAttribute('src', person.avatarUrl())
+    document.getElementById('section-1').style.display = 'none'
+    document.getElementById('section-2').style.display = 'block'
   }
 
   if (blockstack.isUserSignedIn()) {
@@ -23,7 +23,5 @@ $(document).ready(function() {
     blockstack.signUserIn(function(userData) {
       window.location = window.location.origin
     })
-  } else {
-    // do nothing
   }
 })
