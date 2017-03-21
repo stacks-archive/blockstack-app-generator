@@ -19,7 +19,8 @@
   "homepage": "https://github.com/blockstack/hello-blockstack#readme",
   "devDependencies": {
     "browserify": "^14.1.0",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "opn": "^4.0.2"
   },
   "dependencies": {
     "blockstack": "^0.2.13"

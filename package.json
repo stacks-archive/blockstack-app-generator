@@ -1,6 +1,6 @@
 {
   "name": "generator-blockstack",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "homepage": "",
   "author": {
@@ -13,7 +13,9 @@
   ],
   "main": "generators/index.js",
   "keywords": [
-    "",
+    "blockstack",
+    "apps",
+    "yeoman",
     "yeoman-generator"
   ],
   "dependencies": {

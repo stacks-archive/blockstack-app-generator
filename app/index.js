@@ -7,7 +7,7 @@ module.exports = Generator.extend({
   prompting: function () {
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the primo ' + chalk.red('generator-blockstack') + ' generator!'
+      'Welcome to the ' + chalk.red('Blockstack') + ' app generator!'
     ));
 
     var prompts = [{
@@ -24,31 +24,25 @@ module.exports = Generator.extend({
   },
 
   writing: {
-    packageJSON: function () {
+    configs: function () {
       this.fs.copy(
         this.templatePath('_package.json'),
         this.destinationPath('package.json')
       );
-    },
-    editorConfig: function () {
       this.fs.copy(
         this.templatePath('editorconfig'),
         this.destinationPath('.editorconfig')
       );
-    },
-    gitignore: function () {
       this.fs.copy(
         this.templatePath('gitignore'),
         this.destinationPath('.gitignore')
       );
-    },
-    requiresJS: function () {
       this.fs.copy(
         this.templatePath('requires.js'),
         this.destinationPath('requires.js')
       );
     },
-    serverJS: function () {
+    server: function () {
       this.fs.copy(
         this.templatePath('server.js'),
         this.destinationPath('server.js')
@@ -72,10 +66,14 @@ module.exports = Generator.extend({
         this.destinationPath('public/index.html')
       );
     },
-    misc: function () {
+    publicExtras: function () {
       this.fs.copy(
         this.templatePath('public/robots.txt'),
         this.destinationPath('public/robots.txt')
+      );
+      this.fs.copy(
+        this.templatePath('public/manifest.json'),
+        this.destinationPath('public/manifest.json')
       );
     }
   },
