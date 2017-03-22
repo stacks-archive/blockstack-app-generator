@@ -53,12 +53,22 @@ module.exports = Generator.extend({
         this.templatePath('public/app.css'),
         this.destinationPath('public/app.css')
       );
+      this.fs.copy(
+        this.templatePath('public/bootstrap.min.css'),
+        this.destinationPath('public/bootstrap.min.css')
+      );
     },
     scripts: function () {
       this.fs.copy(
         this.templatePath('public/app.js'),
         this.destinationPath('public/app.js')
       );
+    },
+    images: function () {
+      this.fs.copy(
+        this.templatePath('public/icon-192x192.png'),
+        this.destinationPath('public/icon-192x192.png')
+      )
     },
     html: function () {
       this.fs.copy(
