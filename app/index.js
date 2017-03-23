@@ -41,6 +41,10 @@ module.exports = Generator.extend({
         this.templatePath('requires.js'),
         this.destinationPath('requires.js')
       );
+      this.fs.copy(
+        this.templatePath('firebase.json'),
+        this.destinationPath('firebase.json')
+      );
     },
     server: function () {
       this.fs.copy(
