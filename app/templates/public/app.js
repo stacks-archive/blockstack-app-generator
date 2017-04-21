@@ -1,9 +1,11 @@
-document.addEventListener("DOMContentLoaded", function(event) { 
-  document.getElementById('signin-button').addEventListener('click', function() {
+document.addEventListener("DOMContentLoaded", function(event) {
+  document.getElementById('signin-button').addEventListener('click', function(event) {
+    event.preventDefault()
     var authRequest = blockstack.makeAuthRequest(null, window.location.origin)
     blockstack.redirectUserToSignIn(authRequest)
   })
-  document.getElementById('signout-button').addEventListener('click', function() {
+  document.getElementById('signout-button').addEventListener('click', function(event) {
+    event.preventDefault()
     blockstack.signUserOut(window.location.origin)
   })
 
