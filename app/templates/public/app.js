@@ -1,12 +1,14 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   document.getElementById('signin-button').addEventListener('click', function(event) {
     event.preventDefault()
-    var authRequest = blockstack.makeAuthRequest(null, window.location.origin)
+    var appDomain = window.location.hostname
+    var privateKey =  null
+    var authRequest = blockstack.makeAuthRequest(privateKey, appDomain)
     blockstack.redirectUserToSignIn(authRequest)
   })
   document.getElementById('signout-button').addEventListener('click', function(event) {
     event.preventDefault()
-    blockstack.signUserOut(window.location.origin)
+    blockstack.signUserOut(window.location.href)
   })
 
   function showProfile(profile) {
