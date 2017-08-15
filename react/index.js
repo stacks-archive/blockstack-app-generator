@@ -56,6 +56,12 @@ module.exports = Generator.extend({
         this.destinationPath('src/components/Signin.jsx')
       );
     },
+    server: function () {
+      this.fs.copy(
+        this.templatePath('server.js'),
+        this.destinationPath('server.js')
+      );
+    },
     styles: function () {
       this.fs.copy(
         this.templatePath('src/styles/style.css'),
