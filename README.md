@@ -1,4 +1,4 @@
-# Blockstack App Generator [![CircleCI][circleci-image]][circleci-url] [![NPM version][npm-image]][npm-url] [![Slack][slack-image]][slack-url] 
+# Blockstack App Generator [![CircleCI][circleci-image]][circleci-url] [![NPM version][npm-image]][npm-url] [![Slack][slack-image]][slack-url]
 
 ## Installation
 
@@ -24,6 +24,12 @@ mkdir hello-blockstack && cd $_
 
 ```bash
 yo blockstack
+```
+
+*For React.JS*
+
+```bash
+yo blockstack:react
 ```
 
 5) Start the development server:
