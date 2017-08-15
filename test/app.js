@@ -41,6 +41,7 @@ describe('generator-blockstack:react', function () {
       '.babelrc',
       '.gitignore',
       'package.json',
+      'server.js',
       'webpack.config.js',
       'src/index.js',
       'src/index.html',
