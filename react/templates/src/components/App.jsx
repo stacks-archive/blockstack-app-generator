@@ -4,9 +4,8 @@ import Signin from './Signin.jsx';
 import {
   isSignInPending,
   isUserSignedIn,
-  makeAuthRequest,
-  redirectUserToSignIn,
-  signUserIn,
+  redirectToSignIn,
+  handlePendingSignIn,
   signUserOut,
 } from 'blockstack';
 
@@ -18,8 +17,7 @@ export default class App extends Component {
 
   handleSignIn(e) {
     e.preventDefault();
-  	const authRequest = makeAuthRequest(null, window.location.origin);
-    redirectUserToSignIn(authRequest);
+    redirectToSignIn();
   }
 
   handleSignOut(e) {
@@ -42,7 +40,7 @@ export default class App extends Component {
 
   componentWillMount() {
     if (isSignInPending()) {
-      signUserIn((userData) => {
+      handlePendingSignIn().then((userData) => {
         window.location = window.location.origin;
       });
     }

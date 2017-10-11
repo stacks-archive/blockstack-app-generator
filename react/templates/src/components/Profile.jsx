@@ -5,6 +5,8 @@ import {
   Person,
 } from 'blockstack';
 
+const avatarFallbackImage = 'https://s3.amazonaws.com/onename/avatar-placeholder.png';
+
 export default class Profile extends Component {
   constructor(props) {
   	super(props);
@@ -15,7 +17,7 @@ export default class Profile extends Component {
           return 'Anonymous';
         },
   	  	avatarUrl() {
-  	  	  return 'https://s3.amazonaws.com/onename/avatar-placeholder.png';
+  	  	  return avatarFallbackImage;
   	  	},
   	  },
   	};
@@ -28,9 +30,9 @@ export default class Profile extends Component {
       !isSignInPending() ?
       <div className="panel-welcome" id="section-2">
         <div className="avatar-section">
-          <img src={ person.avatarUrl() } className="img-rounded avatar" id="avatar-image" />
+          <img src={ person.avatarUrl() ? person.avatarUrl() : avatarFallbackImage } className="img-rounded avatar" id="avatar-image" />
         </div>
-        <h1>Hello, <span id="heading-name">{ person.name() }</span>!</h1>
+        <h1>Hello, <span id="heading-name">{ person.name() ? person.name() : 'Nameless Person' }</span>!</h1>
         <p className="lead">
           <button
             className="btn btn-primary btn-lg"
@@ -45,10 +47,8 @@ export default class Profile extends Component {
   }
 
   componentWillMount() {
-    loadUserData((userData) => {
-      this.setState({
-        person: new Person(userData.profile),
-      });
+    this.setState({
+      person: new Person(loadUserData().profile),
     });
   }
 }

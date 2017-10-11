@@ -1,10 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   document.getElementById('signin-button').addEventListener('click', function(event) {
     event.preventDefault()
-    var appDomain = window.location.hostname
-    var privateKey =  null
-    var authRequest = blockstack.makeAuthRequest(privateKey, appDomain)
-    blockstack.redirectUserToSignIn(authRequest)
+    blockstack.redirectToSignIn()
   })
   document.getElementById('signout-button').addEventListener('click', function(event) {
     event.preventDefault()
@@ -13,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   function showProfile(profile) {
     var person = new blockstack.Person(profile)
-    document.getElementById('heading-name').innerHTML = person.name()
+    document.getElementById('heading-name').innerHTML = person.name() ? person.name() : "Nameless Person"
     if(person.avatarUrl()) {
       document.getElementById('avatar-image').setAttribute('src', person.avatarUrl())
     }
@@ -22,11 +19,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   if (blockstack.isUserSignedIn()) {
-    blockstack.loadUserData(function(userData) {
-      showProfile(userData.profile)
-    })
+    var profile = blockstack.loadUserData().profile
+      showProfile(profile)
   } else if (blockstack.isSignInPending()) {
-    blockstack.signUserIn(function(userData) {
+    blockstack.handlePendingSignIn().then(function(userData) {
       window.location = window.location.origin
     })
   }
