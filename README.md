@@ -32,6 +32,12 @@ yo blockstack
 yo blockstack:react
 ```
 
+*For Vue.JS*
+
+```bash
+yo blockstack:vue
+```
+
 5) Start the development server:
 
 ```bash
