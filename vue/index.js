@@ -130,8 +130,8 @@ module.exports = Generator.extend({
     },
     styles: function () {
       this.fs.copy(
-        this.templatePath('src/assets/style.css'),
-        this.destinationPath('src/assets/style.css')
+        this.templatePath('src/assets/styles.css'),
+        this.destinationPath('src/assets/styles.css')
       );
     },
     scripts: function () {
