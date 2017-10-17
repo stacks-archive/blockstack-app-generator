@@ -98,20 +98,20 @@ module.exports = Generator.extend({
         this.destinationPath('build/vue-loader.conf.js')
       );
       this.fs.copy(
-        this.templatePath('build/webpack.base.js'),
-        this.destinationPath('build/webpack.base.js')
+        this.templatePath('build/webpack.base.conf.js'),
+        this.destinationPath('build/webpack.base.conf.js')
       );
       this.fs.copy(
-        this.templatePath('build/webpack.dev.js'),
-        this.destinationPath('build/webpack.dev.js')
+        this.templatePath('build/webpack.dev.conf.js'),
+        this.destinationPath('build/webpack.dev.conf.js')
       );
       this.fs.copy(
-        this.templatePath('build/webpack.prod.js'),
-        this.destinationPath('build/webpack.prod.js')
+        this.templatePath('build/webpack.prod.conf.js'),
+        this.destinationPath('build/webpack.prod.conf.js')
       );
       this.fs.copy(
-        this.templatePath('build/webpack.test.js'),
-        this.destinationPath('build/webpack.test.js')
+        this.templatePath('build/webpack.test.conf.js'),
+        this.destinationPath('build/webpack.test.conf.js')
       );
     },
     components: function () {
