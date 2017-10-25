@@ -124,8 +124,8 @@ module.exports = Generator.extend({
         this.destinationPath('src/components/Profile.vue')
       );
       this.fs.copy(
-        this.templatePath('src/components/Signin.vue'),
-        this.destinationPath('src/components/Signin.vue')
+        this.templatePath('src/components/SignIn.vue'),
+        this.destinationPath('src/components/SignIn.vue')
       );
     },
     styles: function () {
