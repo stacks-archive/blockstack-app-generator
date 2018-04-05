@@ -35,8 +35,12 @@ module.exports = Generator.extend({
       copy(this, '_package.json','package.json');
       copy(this, 'babelrc','.babelrc');
       copy(this, 'gitignore','.gitignore');
-      copy(this, 'build', 'build')
-      copy(this, 'config', 'config')
+      copy(this, 'build', 'build');
+      copy(this, 'config', 'config');
+      copy(this, 'README.md', 'README.md');
+      copy(this, '.eslintrc.js', '.eslintrc.js');
+      copy(this, '.editorconfig', '.editorconfig');
+      copy(this, '.eslintignore', '.eslintignore');
     },
     components: function () {
       copy(this, 'src/components','src/components');
