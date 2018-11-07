@@ -1,12 +1,12 @@
 {
   "name": "generator-blockstack",
   "version": "0.4.0",
-  "description": "",
-  "homepage": "",
+  "description": "A set of yeoman generators building Blockstack apps",
+  "homepage": "https://blocktack.org",
   "author": {
     "name": "Blockstack PBC",
     "email": "editors@blockstack.com",
-    "url": ""
+    "url": "https://blockstack.org"
   },
   "files": [
     "app",
@@ -41,7 +41,7 @@
     "yeoman-test": "^1.6.0",
     "minimatch": "3.0.4"
   },
-  "repository": "/generator-blockstack",
+  "repository": "github:blockstack/blockstack-app-generator",
   "scripts": {
     "prepublishOnly": "gulp prepublish",
     "test": "gulp"
