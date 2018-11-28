@@ -1,12 +1,12 @@
 {
   "name": "generator-blockstack",
   "version": "0.4.0",
-  "description": "",
-  "homepage": "",
+  "description": "A set of yeoman generators building Blockstack apps",
+  "homepage": "https://blocktack.org",
   "author": {
     "name": "Blockstack PBC",
     "email": "editors@blockstack.com",
-    "url": ""
+    "url": "https://blockstack.org"
   },
   "files": [
     "app",
@@ -20,28 +20,29 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "yeoman-generator": "^1.0.0",
+    "yeoman-generator": "^3.1.1",
     "chalk": "^1.1.3",
     "yosay": "^1.2.1"
   },
   "devDependencies": {
     "eslint": "^3.1.1",
     "eslint-config-xo-space": "^0.15.0",
-    "gulp": "^3.9.0",
-    "gulp-coveralls": "^0.1.0",
+    "growl": "^1.10.2",
+    "gulp": "^4.0.0",
+    "gulp-cli": "^2.0.1",
     "gulp-eslint": "^3.0.1",
     "gulp-exclude-gitignore": "^1.0.0",
-    "gulp-istanbul": "^1.0.0",
     "gulp-line-ending-corrector": "^1.0.1",
-    "gulp-mocha": "^3.0.1",
-    "gulp-nsp": "^2.1.0",
+    "gulp-mocha": "^6.0",
+    "gulp-nsp": "^3.0.1",
     "gulp-plumber": "^1.0.0",
+    "minimatch": "3.0.4",
     "yeoman-assert": "^2.2.1",
-    "yeoman-test": "^1.6.0"
+    "yeoman-test": "^2.0.0"
   },
-  "repository": "/generator-blockstack",
+  "repository": "github:blockstack/blockstack-app-generator",
   "scripts": {
-    "prepublish": "gulp prepublish",
+    "prepublishOnly": "gulp prepublish",
     "test": "gulp"
   },
   "license": "MIT"
