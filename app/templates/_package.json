@@ -25,6 +25,6 @@
     "open": "^6.1.0"
   },
   "dependencies": {
-    "blockstack": "^19.0.1"
+    "blockstack": "^19.1.0"
   }
 }
