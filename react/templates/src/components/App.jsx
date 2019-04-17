@@ -2,12 +2,15 @@ import React, { Component, Link } from 'react';
 import Profile from './Profile.jsx';
 import Signin from './Signin.jsx';
 import {
-  isSignInPending,
-  isUserSignedIn,
-  redirectToSignIn,
-  handlePendingSignIn,
-  signUserOut,
+  UserSession,
+  AppConfig
 } from 'blockstack';
+
+const appConfig = {
+  appDomain: window.location.origin,
+}
+
+const userSession = new UserSession(appConfig)
 
 export default class App extends Component {
 
@@ -17,21 +20,21 @@ export default class App extends Component {
 
   handleSignIn(e) {
     e.preventDefault();
-    redirectToSignIn();
+    userSession.redirectToSignIn();
   }
 
   handleSignOut(e) {
     e.preventDefault();
-    signUserOut(window.location.origin);
+    userSession.signUserOut(window.location.origin);
   }
 
   render() {
     return (
       <div className="site-wrapper">
         <div className="site-wrapper-inner">
-          { !isUserSignedIn() ?
-            <Signin handleSignIn={ this.handleSignIn } />
-            : <Profile handleSignOut={ this.handleSignOut } />
+          { !userSession.isUserSignedIn() ?
+            <Signin userSession={userSession} handleSignIn={ this.handleSignIn } />
+            : <Profile userSession={userSession} handleSignOut={ this.handleSignOut } />
           }
         </div>
       </div>
@@ -39,8 +42,8 @@ export default class App extends Component {
   }
 
   componentWillMount() {
-    if (isSignInPending()) {
-      handlePendingSignIn().then((userData) => {
+    if (userSession.isSignInPending()) {
+      userSession.handlePendingSignIn().then((userData) => {
         window.location = window.location.origin;
       });
     }
