@@ -1,13 +1,16 @@
 import * as blockstack from 'blockstack'
 
+const appConfig = new blockstack.AppConfig()
+const userSession = new blockstack.UserSession({ appConfig: appConfig })
+
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('signin-button').addEventListener('click', function (event) {
       event.preventDefault()
-      blockstack.redirectToSignIn()
+      userSession.redirectToSignIn()
     })
     document.getElementById('signout-button').addEventListener('click', function (event) {
       event.preventDefault()
-      blockstack.signUserOut(window.location.href)
+      userSession.signUserOut(window.location.href)
     })
 
     function showProfile(profile) {
@@ -20,11 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById('section-2').style.display = 'block'
     }
 
-    if (blockstack.isUserSignedIn()) {
-      var profile = blockstack.loadUserData().profile
+    if (userSession.isUserSignedIn()) {
+      var profile = userSession.loadUserData().profile
       showProfile(profile)
-    } else if (blockstack.isSignInPending()) {
-      blockstack.handlePendingSignIn().then(function (userData) {
+    } else if (userSession.isSignInPending()) {
+      userSession.handlePendingSignIn().then(function (userData) {
         window.location = window.location.origin
       })
     }
