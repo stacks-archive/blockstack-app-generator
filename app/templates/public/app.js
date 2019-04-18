@@ -1,23 +1,15 @@
 document.addEventListener("DOMContentLoaded", event => {
-  let appConfig = {
-    scopes: [],
-    appDomain: window.location.origin,
-    redirectPath: '',
-    manifestPath: '/manifest.json',
-    coreNode: null,
-    authenticatorURL: 'https://browser.blockstack.org/'
-  }
-
-  let UserSession = new blockstack.UserSession(appConfig)
+  const appConfig = new blockstack.AppConfig()
+  const userSession = new blockstack.UserSession({ appConfig: appConfig })
 
   document.getElementById('signin-button').addEventListener('click', event => {
     event.preventDefault()
-    UserSession.redirectToSignIn()
+    userSession.redirectToSignIn()
   })
 
   document.getElementById('signout-button').addEventListener('click', event => {
     event.preventDefault()
-    UserSession.signUserOut()
+    userSession.signUserOut()
     window.location = window.location.origin
   })
 
@@ -31,11 +23,11 @@ document.addEventListener("DOMContentLoaded", event => {
     document.getElementById('section-2').style.display = 'block'
   }
 
-  if (UserSession.isUserSignedIn()) {
-    const { profile } = UserSession.loadUserData()
+  if (userSession.isUserSignedIn()) {
+    const { profile } = userSession.loadUserData()
     showProfile(profile)
-  } else if (UserSession.isSignInPending()) {
-    UserSession.handlePendingSignIn().then(userData => {
+  } else if (userSession.isSignInPending()) {
+    userSession.handlePendingSignIn().then(userData => {
       window.location = window.location.origin
     })
   }
