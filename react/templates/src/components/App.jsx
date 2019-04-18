@@ -6,11 +6,8 @@ import {
   AppConfig
 } from 'blockstack';
 
-const appConfig = {
-  appDomain: window.location.origin,
-}
-
-const userSession = new UserSession(appConfig)
+const appConfig = new AppConfig()
+const userSession = new UserSession({ appConfig: appConfig })
 
 export default class App extends Component {
 
