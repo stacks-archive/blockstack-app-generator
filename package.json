@@ -10,7 +10,8 @@
   },
   "files": [
     "app",
-    "react"
+    "react",
+    "webpack"
   ],
   "main": "generators/index.js",
   "keywords": [
