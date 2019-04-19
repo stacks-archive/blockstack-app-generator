@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { isUserSignedIn } from 'blockstack';
 
 export default class Signin extends Component {
   constructor(props) {

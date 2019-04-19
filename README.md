@@ -24,11 +24,23 @@ mkdir hello-blockstack && cd $_
 yo blockstack
 ```
 
+---
+
+*For Webpack*
+
+```bash
+yo blockstack:webpack
+```
+
+---
+
 *For React.JS*
 
 ```bash
 yo blockstack:react
 ```
+
+---
 
 5) Start the development server:
 
