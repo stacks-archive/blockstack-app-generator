@@ -17,12 +17,17 @@ describe('generator-blockstack:app', function () {
       '.editorconfig',
       '.gitignore',
       'package.json',
+      'firebase.json',
       'requires.js',
       'server.js',
       'public/app.css',
       'public/app.js',
+      'public/bootstrap.min.css',
+      'public/favicon.ico',
+      'public/icon-192x192.png',
       'public/index.html',
-      'public/robots.txt'
+      'public/manifest.json',
+      'public/robots.txt',
     ]);
   });
 });
