@@ -1,0 +1,25 @@
+version: 1.0
+env:
+  variables:
+    VERSION_NODE_DEFAULT: 10
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: dist
+    files:
+        - '**/*'
+  customHeaders:
+   - pattern: '**/manifest.json'
+     headers:
+     - key: 'Access-Control-Allow-Origin'
+       value: '*'
+     - key: 'Access-Control-Allow-Headers'
+       value: '*'
+     - key: 'Access-Control-Allow-Methods'
+       value: 'GET'
