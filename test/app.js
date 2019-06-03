@@ -46,6 +46,8 @@ describe('generator-blockstack:webpack', function () {
       '.gitignore',
       'package.json',
       'webpack.config.js',
+      'netlify.toml',
+      'firebase.json',
       'src/index.js',
       'dist/app.css',
       'dist/index.html',
