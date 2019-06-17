@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 
-import App from './components/App.jsx';
+import App from './App.js';
 
 // Require Sass file so webpack can build it
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';

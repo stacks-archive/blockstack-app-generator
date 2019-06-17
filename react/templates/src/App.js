@@ -1,6 +1,7 @@
-import React, { Component, Link } from 'react';
-import Profile from './Profile.jsx';
-import Signin from './Signin.jsx';
+//import React, { Component, Link } from 'react';
+import React, { Component } from 'react';
+import Profile from './Profile.js';
+import Signin from './Signin.js';
 import {
   UserSession,
   AppConfig
