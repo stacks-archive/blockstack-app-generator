@@ -66,18 +66,20 @@ describe('generator-blockstack:react', function () {
 
   it('creates files', function () {
     assert.file([
-      '.babelrc',
+      '.env.development',
       '.gitignore',
       'package.json',
-      'webpack.config.js',
+      'README.md',
       'src/index.js',
-      'src/index.html',
+      'src/App.js',
       'src/styles/style.css',
-      'src/assets/manifest.json',
-      'src/images/icon-192x192.png',
-      'src/components/App.jsx',
-      'src/components/Profile.jsx',
-      'src/components/Signin.jsx',
+      'src/Signin.js',
+      'src/Profile.js',
+      'src/index.js',
+      'src/setupProxy.js',
+      'src/public/icon-192x192.png',
+      'src/public/index.html',
+      'src/public/manifest.json'
     ]);
   });
 });
