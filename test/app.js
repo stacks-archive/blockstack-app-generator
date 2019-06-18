@@ -77,9 +77,9 @@ describe('generator-blockstack:react', function () {
       'src/Profile.js',
       'src/index.js',
       'src/setupProxy.js',
-      'src/public/icon-192x192.png',
-      'src/public/index.html',
-      'src/public/manifest.json'
+      'public/icon-192x192.png',
+      'public/index.html',
+      'public/manifest.json'
     ]);
   });
 });
