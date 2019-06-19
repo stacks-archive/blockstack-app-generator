@@ -8,9 +8,9 @@
     "start": "webpack-dev-server"
   },
   "devDependencies": {
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.3.0"
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.5.1"
   },
   "dependencies": {
     "blockstack": "^19.1.0"

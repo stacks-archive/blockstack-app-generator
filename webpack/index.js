@@ -37,8 +37,16 @@ class BlockstackWebpackGenerator extends Generator {
       this.destinationPath('webpack.config.js')
     );
     this.fs.copy(
+      this.templatePath('netlify.toml'),
+      this.destinationPath('netlify.toml')
+    );
+    this.fs.copy(
       this.templatePath('firebase.json'),
       this.destinationPath('firebase.json')
+    );
+    this.fs.copy(
+      this.templatePath('amplify.yml'),
+      this.destinationPath('amplify.yml')
     );
     // styles
     this.fs.copy(
