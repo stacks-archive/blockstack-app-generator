@@ -4,9 +4,7 @@
 
 1) Install Blockstack for desktop:
 
-- [macOS Releases](https://github.com/blockstack/blockstack-portal/releases)
-- Linux: coming soon
-- Windows: coming soon
+- [Releases](https://github.com/blockstack/blockstack-browser/releases)
 
 2) Install [Yeoman](http://yeoman.io) and the blockstack app generator using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
@@ -26,17 +24,31 @@ mkdir hello-blockstack && cd $_
 yo blockstack
 ```
 
+---
+
+*For Webpack*
+
+```bash
+yo blockstack:webpack
+```
+
+---
+
 *For React.JS*
 
 ```bash
 yo blockstack:react
 ```
 
+---
+
 *For Vue.JS*
 
 ```bash
 yo blockstack:vue
 ```
+
+---
 
 5) Start the development server:
 

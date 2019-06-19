@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import {
-  isSignInPending,
-  loadUserData,
   Person,
 } from 'blockstack';
 
@@ -24,13 +22,13 @@ export default class Profile extends Component {
   }
 
   render() {
-    const { handleSignOut } = this.props;
+    const { handleSignOut, userSession } = this.props;
     const { person } = this.state;
     return (
-      !isSignInPending() ?
+      !userSession.isSignInPending() ?
       <div className="panel-welcome" id="section-2">
         <div className="avatar-section">
-          <img src={ person.avatarUrl() ? person.avatarUrl() : avatarFallbackImage } className="img-rounded avatar" id="avatar-image" />
+          <img src={ person.avatarUrl() ? person.avatarUrl() : avatarFallbackImage } className="img-rounded avatar" id="avatar-image" alt=""/>
         </div>
         <h1>Hello, <span id="heading-name">{ person.name() ? person.name() : 'Nameless Person' }</span>!</h1>
         <p className="lead">
@@ -47,8 +45,9 @@ export default class Profile extends Component {
   }
 
   componentWillMount() {
+    const { userSession } = this.props;
     this.setState({
-      person: new Person(loadUserData().profile),
+      person: new Person(userSession.loadUserData().profile),
     });
   }
 }

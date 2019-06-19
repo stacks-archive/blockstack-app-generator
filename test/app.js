@@ -17,12 +17,40 @@ describe('generator-blockstack:app', function () {
       '.editorconfig',
       '.gitignore',
       'package.json',
+      'firebase.json',
       'requires.js',
       'server.js',
       'public/app.css',
       'public/app.js',
+      'public/bootstrap.min.css',
+      'public/favicon.ico',
+      'public/icon-192x192.png',
       'public/index.html',
-      'public/robots.txt'
+      'public/manifest.json',
+      'public/robots.txt',
+    ]);
+  });
+});
+
+describe('generator-blockstack:webpack', function () {
+  this.timeout(9000);
+
+  before(function () {
+    return helpers.run(path.join(__dirname, '../webpack'))
+      .withPrompts({someAnswer: true})
+      .toPromise();
+  });
+
+  it('creates files', function () {
+    assert.file([
+      '.gitignore',
+      'package.json',
+      'webpack.config.js',
+      'src/index.js',
+      'dist/app.css',
+      'dist/index.html',
+      'dist/manifest.json',
+      'dist/robots.txt'
     ]);
   });
 });
@@ -38,18 +66,20 @@ describe('generator-blockstack:react', function () {
 
   it('creates files', function () {
     assert.file([
-      '.babelrc',
+      '.env.development',
       '.gitignore',
       'package.json',
-      'webpack.config.js',
+      'README.md',
       'src/index.js',
-      'src/index.html',
+      'src/App.js',
       'src/styles/style.css',
-      'src/assets/manifest.json',
-      'src/images/icon-192x192.png',
-      'src/components/App.jsx',
-      'src/components/Profile.jsx',
-      'src/components/Signin.jsx',
+      'src/Signin.js',
+      'src/Profile.js',
+      'src/index.js',
+      'src/setupProxy.js',
+      'public/icon-192x192.png',
+      'public/index.html',
+      'public/manifest.json'
     ]);
   });
 });

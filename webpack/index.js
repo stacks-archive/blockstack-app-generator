@@ -3,7 +3,7 @@ var Generator = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
 
-class BlockstackGenerator extends Generator {
+class BlockstackWebpackGenerator extends Generator {
   prompting() {
     // Have Yeoman greet the user.
     this.log(yosay(
@@ -29,62 +29,49 @@ class BlockstackGenerator extends Generator {
       this.destinationPath('package.json')
     );
     this.fs.copy(
-      this.templatePath('editorconfig'),
-      this.destinationPath('.editorconfig')
-    );
-    this.fs.copy(
       this.templatePath('gitignore'),
       this.destinationPath('.gitignore')
     );
     this.fs.copy(
-      this.templatePath('requires.js'),
-      this.destinationPath('requires.js')
+      this.templatePath('webpack.config.js'),
+      this.destinationPath('webpack.config.js')
     );
     this.fs.copy(
       this.templatePath('firebase.json'),
       this.destinationPath('firebase.json')
     );
-    // server
-    this.fs.copy(
-      this.templatePath('server.js'),
-      this.destinationPath('server.js')
-    );
     // styles
     this.fs.copy(
-      this.templatePath('public/app.css'),
-      this.destinationPath('public/app.css')
+      this.templatePath('dist/app.css'),
+      this.destinationPath('dist/app.css')
     );
     this.fs.copy(
-      this.templatePath('public/bootstrap.min.css'),
-      this.destinationPath('public/bootstrap.min.css')
-    );
-    // scripts
-    this.fs.copy(
-      this.templatePath('public/app.js'),
-      this.destinationPath('public/app.js')
+      this.templatePath('dist/bootstrap.min.css'),
+      this.destinationPath('dist/bootstrap.min.css')
     );
     // images
     this.fs.copy(
-      this.templatePath('public/icon-192x192.png'),
-      this.destinationPath('public/icon-192x192.png')
-    )
-    this.fs.copy(
-      this.templatePath('public/favicon.ico'),
-      this.destinationPath('public/favicon.ico')
+      this.templatePath('dist/icon-192x192.png'),
+      this.destinationPath('dist/icon-192x192.png')
     )
     // html
     this.fs.copy(
-      this.templatePath('public/index.html'),
-      this.destinationPath('public/index.html')
+      this.templatePath('dist/index.html'),
+      this.destinationPath('dist/index.html')
     );
     // publicExtras
     this.fs.copy(
-      this.templatePath('public/robots.txt'),
-      this.destinationPath('public/robots.txt')
+      this.templatePath('dist/robots.txt'),
+      this.destinationPath('dist/robots.txt')
     );
     this.fs.copy(
-      this.templatePath('public/manifest.json'),
-      this.destinationPath('public/manifest.json')
+      this.templatePath('dist/manifest.json'),
+      this.destinationPath('dist/manifest.json')
+    );
+    // scripts
+    this.fs.copy(
+      this.templatePath('src/index.js'),
+      this.destinationPath('src/index.js')
     );
   }
 
@@ -95,4 +82,4 @@ class BlockstackGenerator extends Generator {
   }
 }
 
-module.exports = BlockstackGenerator;
+module.exports = BlockstackWebpackGenerator;
