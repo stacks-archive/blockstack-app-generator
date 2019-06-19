@@ -15,17 +15,12 @@
 </template>
 
 <script>
+import { userSession } from '../userSession'
 export default {
   name: 'signin',
-  data () {
-    return {
-      blockstack: window.blockstack
-    }
-  },
   methods: {
     signIn () {
-      const blockstack = this.blockstack
-      blockstack.redirectToSignIn()
+      userSession.redirectToSignIn()
     }
   }
 }

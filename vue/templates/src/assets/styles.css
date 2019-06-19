@@ -4,7 +4,7 @@ html,body{height:100%;background-color:#E91E63;}
 body{color:#fff;text-align:center;}
 .hide{display:none;}
 .landing-heading{font-family:'Source Code Pro',monospace;font-weight:400;}
-
+.center{top:30%;position:relative;justify-content:center}
 /* Buttons */
 .btn{font-family:'Source Code Pro',monospace;padding:0.5625rem 2.5rem;font-size:0.8125rem;font-weight:400;line-height:1.75rem;border-radius:0!important;-webkit-transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-ms-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
 .btn-lg{font-size:0.875rem;padding:0.6875rem 3.4375rem;line-height:1.75rem;}

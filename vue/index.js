@@ -13,7 +13,7 @@ module.exports = Generator.extend({
     var prompts = [{
       type: 'confirm',
       name: 'someAnswer',
-      message: 'Are you ready to build a Blockstack app in Vue.JS?',
+      message: '(TESTING) Are you ready to build a Blockstack app in Vue.JS?',
       default: true
     }];
 
@@ -26,16 +26,20 @@ module.exports = Generator.extend({
   writing: {
     configs: function () {
       this.fs.copy(
-        this.templatePath('_headers'),
-        this.destinationPath('_headers')
-      );
-      this.fs.copy(
         this.templatePath('_package.json'),
         this.destinationPath('package.json')
       );
       this.fs.copy(
-        this.templatePath('babelrc'),
-        this.destinationPath('.babelrc')
+        this.templatePath('babel.config.js'),
+        this.destinationPath('babel.config.js')
+      );
+      this.fs.copy(
+        this.templatePath('browserslistrc'),
+        this.destinationPath('.broswerslistrc')
+      );
+      this.fs.copy(
+        this.templatePath('docker-compose.yaml'),
+        this.destinationPath('docker-compose.yaml')
       );
       this.fs.copy(
         this.templatePath('editorconfig'),
@@ -50,69 +54,30 @@ module.exports = Generator.extend({
         this.destinationPath('.eslintrc.js')
       );
       this.fs.copy(
+        this.templatePath('firebase.json'),
+        this.destinationPath('firebase.json')
+      );
+      this.fs.copy(
+        this.templatePath('firebaserc'),
+        this.destinationPath('.firebaserc')
+      );
+      this.fs.copy(
         this.templatePath('gitignore'),
         this.destinationPath('.gitignore')
+      );
+      this.fs.copy(
+        this.templatePath('jest.config.js'),
+        this.destinationPath('jest.config.js')
+      );
+      this.fs.copy(
+        this.templatePath('postcss.config.js'),
+        this.destinationPath('postcss.config.js')
       );
       this.fs.copy(
         this.templatePath('postcssrc.js'),
         this.destinationPath('.postcssrc.js')
       );
-      this.fs.copy(
-        this.templatePath('config/dev.env.js'),
-        this.destinationPath('config/dev.env.js')
-      );
-      this.fs.copy(
-        this.templatePath('config/index.js'),
-        this.destinationPath('config/index.js')
-      );
-      this.fs.copy(
-        this.templatePath('config/prod.env.js'),
-        this.destinationPath('config/prod.env.js')
-      );
-      this.fs.copy(
-        this.templatePath('config/test.env.js'),
-        this.destinationPath('config/test.env.js')
-      );
-      this.fs.copy(
-        this.templatePath('build/build.js'),
-        this.destinationPath('build/build.js')
-      );
-      this.fs.copy(
-        this.templatePath('build/check-versions.js'),
-        this.destinationPath('build/check-versions.js')
-      );
-      this.fs.copy(
-        this.templatePath('build/dev-client.js'),
-        this.destinationPath('build/dev-client.js')
-      );
-      this.fs.copy(
-        this.templatePath('build/dev-server.js'),
-        this.destinationPath('build/dev-server.js')
-      );
-      this.fs.copy(
-        this.templatePath('build/utils.js'),
-        this.destinationPath('build/utils.js')
-      );
-      this.fs.copy(
-        this.templatePath('build/vue-loader.conf.js'),
-        this.destinationPath('build/vue-loader.conf.js')
-      );
-      this.fs.copy(
-        this.templatePath('build/webpack.base.conf.js'),
-        this.destinationPath('build/webpack.base.conf.js')
-      );
-      this.fs.copy(
-        this.templatePath('build/webpack.dev.conf.js'),
-        this.destinationPath('build/webpack.dev.conf.js')
-      );
-      this.fs.copy(
-        this.templatePath('build/webpack.prod.conf.js'),
-        this.destinationPath('build/webpack.prod.conf.js')
-      );
-      this.fs.copy(
-        this.templatePath('build/webpack.test.conf.js'),
-        this.destinationPath('build/webpack.test.conf.js')
-      );
+      
     },
     components: function () {
       this.fs.copy(
@@ -120,12 +85,16 @@ module.exports = Generator.extend({
         this.destinationPath('src/App.vue')
       );
       this.fs.copy(
-        this.templatePath('src/components/Profile.vue'),
-        this.destinationPath('src/components/Profile.vue')
+        this.templatePath('src/components/Dashboard.vue'),
+        this.destinationPath('src/components/Dashboard.vue')
       );
       this.fs.copy(
-        this.templatePath('src/components/SignIn.vue'),
-        this.destinationPath('src/components/SignIn.vue')
+        this.templatePath('src/components/Landing.vue'),
+        this.destinationPath('src/components/Landing.vue')
+      );
+      this.fs.copy(
+        this.templatePath('src/views/Home.vue'),
+        this.destinationPath('src/views/Home.vue')
       );
     },
     styles: function () {
@@ -140,26 +109,40 @@ module.exports = Generator.extend({
         this.destinationPath('src/main.js')
       );
       this.fs.copy(
-        this.templatePath('src/router/index.js'),
-        this.destinationPath('src/router/index.js')
+        this.templatePath('src/router.js'),
+        this.destinationPath('src/router.js')
       );
-    },
-    images: function () {
       this.fs.copy(
-        this.templatePath('src/assets/icon-192x192.png'),
-        this.destinationPath('src/assets/icon-192x192.png')
-      )
+        this.templatePath('src/userSession.js'),
+        this.destinationPath('src/userSession.js')
+      );
     },
     html: function () {
       this.fs.copy(
-        this.templatePath('index.html'),
-        this.destinationPath('index.html')
+        this.templatePath('public/index.html'),
+        this.destinationPath('public/index.html')
       );
     },
     assets: function () {
       this.fs.copy(
-        this.templatePath('src/assets/manifest.json'),
-        this.destinationPath('src/assets/manifest.json')
+        this.templatePath('public/manifest.json'),
+        this.destinationPath('public/manifest.json')
+      );
+      this.fs.copy(
+        this.templatePath('public/logo.png'),
+        this.destinationPath('public/logo.png')
+      );
+      this.fs.copy(
+        this.templatePath('public/avatar-placeholder.png'),
+        this.destinationPath('public/avatar-placeholder.json')
+      );
+      this.fs.copy(
+        this.templatePath('public/_headers'),
+        this.destinationPath('public/_headers')
+      );
+      this.fs.copy(
+        this.templatePath('public/_redirects'),
+        this.destinationPath('public/_redirects')
       );
     }
   },

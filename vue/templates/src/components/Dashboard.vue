@@ -3,7 +3,7 @@
     <div class="avatar-section">
       <img :src="avatar" class="img-rounded avatar" id="avatar-image">
     </div>
-    <h1>Hello, <span id="heading-name">{{ givenName }}</span>!</h1>
+    <h1 class="landing-heading">Hello, <span id="heading-name">{{ givenName }}</span>!</h1>
     <p class="lead">
       <a
         href="#"
@@ -18,8 +18,13 @@
 </template>
 
 <script>
+import { userSession } from '../userSession'
 export default {
-  props: ['signOut'],
+  methods: {
+    signOut () {
+      userSession.signUserOut(window.location.href)
+    }
+  },
   data () {
     return {
       blockstack: window.blockstack,
@@ -32,14 +37,14 @@ export default {
     if (blockstack.isUserSignedIn()) {
       const profile = blockstack.loadUserData().profile
       const user = new blockstack.Person(profile)
-      this.givenName = user.name()
+      this.givenName = user.name() ? user.name() : 'Nameless Person'
       if (user.avatarUrl()) this.avatar = user.avatarUrl()
       console.log(user.avatarUrl())
     } else if (blockstack.isSignInPending()) {
       blockstack.handlePendingSignIn()
-      .then((userData) => {
-        window.location = window.location.origin
-      })
+        .then((userData) => {
+          window.location = window.location.origin
+        })
     }
   }
 }
