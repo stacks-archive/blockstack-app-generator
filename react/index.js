@@ -13,7 +13,7 @@ class BlockstackReactGenerator extends Generator {
     var prompts = [{
       type: 'confirm',
       name: 'someAnswer',
-      message: 'Are you ready to build a Blockstack app in React?',
+      message: 'Are you ready to build a Blockstack app in React.JS?',
       default: true
     }];
 
