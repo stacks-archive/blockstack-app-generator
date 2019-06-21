@@ -13,12 +13,10 @@
   "license": "MIT",
   "dependencies": {
     "blockstack": "^19.0.1",
-    "bootstrap": "^4.3.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "3.0.1",
-    "typescript": "^3.5.1"
+    "react-scripts": "3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "bootstrap": "^4.3.1",
     "react-test-renderer": "^16.8.6"
   }
 }
