@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "browserify": "browserify requires.js -o public/bundle.js",
-    "start": "npm run browserify && node server.js"
+    "start": "npm run browserify && node server.js",
+    "test": "echo works"
   },
   "repository": {
     "type": "git",

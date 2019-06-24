@@ -8,26 +8,28 @@ const Generator = require("yeoman-generator")
 describe('generator-blockstack:app', function () {
   this.timeout(9000);
 
-  
-before(async () => {
-  const testingDir = path.join(__dirname, "../.app-gen-test");
-  await new Promise((resolve, reject) => {
-    helpers.testDirectory(testingDir, err => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve();
-      }
+  let generator = undefined;
+
+  before(async () => {
+
+    const testingDir = path.join(__dirname, "../.app-gen-test");
+    await new Promise((resolve, reject) => {
+      helpers.testDirectory(testingDir, err => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve();
+        }
+      });
     });
   });
-});
 
   it("generate a project", async () => {
     const appPath = path.join(__dirname, "../app");
-    generator = helpers.createGenerator("blockstack", [appPath], undefined, {
+    generator = helpers.createGenerator(appPath, [], [], {
       skipInstall: false
     });
-
+    helpers.mockPrompt(generator, { someAnswer: true });
     // Run yo-generator to output project.
     await Promise.resolve(generator.run());
   });
@@ -49,7 +51,7 @@ before(async () => {
       'public/robots.txt',
     ]);
   });
-  
+
   it("run npm test", () => {
     // Ensure `npm test` succeeds in generated project.
     generator.spawnCommandSync("npm", ["test"]);
@@ -57,12 +59,13 @@ before(async () => {
 
 });
 
+/*
 describe('generator-blockstack:webpack', function () {
   this.timeout(9000);
 
   before(function () {
     return helpers.run(path.join(__dirname, '../.webpack-gen-test'))
-      .withPrompts({someAnswer: true})
+      .withPrompts({ someAnswer: true })
       .toPromise();
   });
 
@@ -100,7 +103,7 @@ describe('generator-blockstack:react', function () {
 
   before(function () {
     return helpers.run(path.join(__dirname, '../.react-gen-test'))
-      .withPrompts({someAnswer: true})
+      .withPrompts({ someAnswer: true })
       .toPromise();
   });
 
@@ -144,7 +147,7 @@ describe('generator-blockstack:vue', function () {
 
   before(function () {
     return helpers.run(path.join(__dirname, '../.vue-gen-test'))
-      .withPrompts({someAnswer: true})
+      .withPrompts({ someAnswer: true })
       .toPromise();
   });
 
@@ -197,4 +200,6 @@ describe('generator-blockstack:vue', function () {
     // Ensure `npm test` succeeds in generated project.
     generator.spawnCommandSync("npm", ["test"]);
   });
+
 });
+*/

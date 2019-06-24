@@ -4,6 +4,13 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 
 class BlockstackGenerator extends Generator {
+
+  // The name `constructor` is important here
+  constructor(args, opts) {
+    // Calling the super constructor is important so our generator is correctly set up
+    super(args, opts);
+  }
+
   prompting() {
     // Have Yeoman greet the user.
     this.log(yosay(
