@@ -2,7 +2,7 @@
 const path = require('path');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
-/*
+
 describe('generator-blockstack:app', function () {
   this.enableTimeouts(false)
 
@@ -166,7 +166,7 @@ describe('generator-blockstack:react', function () {
 });
 
 
-*/
+
 
 describe('generator-blockstack:vue', function () {
   this.enableTimeouts(false);
