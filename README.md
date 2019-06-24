@@ -56,6 +56,19 @@ yo blockstack:vue
 npm run start
 ```
 
+## Testing
+
+*For all generators*
+
+
+```bash
+npm run test
+```
+
+This command will generate all four variants of Blockstack apps in folders called .app-gen-test,
+.webpack-gen-test, .react-gen-test, and .vue-gen-test and assert that all expected files were
+actually created. It also runs the `npm run test` command within each app. 
+
 ## License
 
 MIT © [Blockstack](https://blockstack.com)

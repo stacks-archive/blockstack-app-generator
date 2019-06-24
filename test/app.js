@@ -2,11 +2,9 @@
 const path = require('path');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
-const yo_env = require("yeoman-environment");
-const Generator = require("yeoman-generator")
-
+/*
 describe('generator-blockstack:app', function () {
-  this.timeout(9000);
+  this.enableTimeouts(false)
 
   let generator = undefined;
 
@@ -59,22 +57,32 @@ describe('generator-blockstack:app', function () {
 
 });
 
-/*
-describe('generator-blockstack:webpack', function () {
-  this.timeout(9000);
 
-  before(function () {
-    return helpers.run(path.join(__dirname, '../.webpack-gen-test'))
-      .withPrompts({ someAnswer: true })
-      .toPromise();
+describe('generator-blockstack:webpack', function () {
+  this.enableTimeouts(false)
+
+
+  let generator = undefined;
+  const testingDir = path.join(__dirname, "../.webpack-gen-test");
+
+  before(async () => {
+    await new Promise((resolve, reject) => {
+      helpers.testDirectory(testingDir, err => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve();
+        }
+      });
+    });
   });
 
   it("generate a project", async () => {
     const appPath = path.join(__dirname, "../webpack");
-    generator = helpers.createGenerator("webpack", [appPath], undefined, {
+    generator = helpers.createGenerator(appPath, [], [], {
       skipInstall: false
     });
-
+    helpers.mockPrompt(generator, { someAnswer: true });
     // Run yo-generator to output project.
     await Promise.resolve(generator.run());
   });
@@ -84,11 +92,14 @@ describe('generator-blockstack:webpack', function () {
       '.gitignore',
       'package.json',
       'webpack.config.js',
+      'firebase.json',
       'src/index.js',
       'dist/app.css',
       'dist/index.html',
       'dist/manifest.json',
-      'dist/robots.txt'
+      'dist/robots.txt',
+      'dist/bootstrap.min.css',
+      'dist/icon-192x192.png'
     ]);
   });
 
@@ -96,23 +107,35 @@ describe('generator-blockstack:webpack', function () {
     // Ensure `npm test` succeeds in generated project.
     generator.spawnCommandSync("npm", ["test"]);
   });
+
+
 });
 
 describe('generator-blockstack:react', function () {
-  this.timeout(9000);
+  this.enableTimeouts(false)
 
-  before(function () {
-    return helpers.run(path.join(__dirname, '../.react-gen-test'))
-      .withPrompts({ someAnswer: true })
-      .toPromise();
+  let generator = undefined;
+
+  before(async () => {
+
+    const testingDir = path.join(__dirname, "../.react-gen-test");
+    await new Promise((resolve, reject) => {
+      helpers.testDirectory(testingDir, err => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve();
+        }
+      });
+    });
   });
 
   it("generate a project", async () => {
     const appPath = path.join(__dirname, "../react");
-    generator = helpers.createGenerator("react", [appPath], undefined, {
+    generator = helpers.createGenerator(appPath, [], [], {
       skipInstall: false
     });
-
+    helpers.mockPrompt(generator, { someAnswer: true });
     // Run yo-generator to output project.
     await Promise.resolve(generator.run());
   });
@@ -142,21 +165,34 @@ describe('generator-blockstack:react', function () {
   });
 });
 
-describe('generator-blockstack:vue', function () {
-  this.timeout(9000);
 
-  before(function () {
-    return helpers.run(path.join(__dirname, '../.vue-gen-test'))
-      .withPrompts({ someAnswer: true })
-      .toPromise();
+*/
+
+describe('generator-blockstack:vue', function () {
+  this.enableTimeouts(false);
+
+  let generator = undefined;
+
+  before(async () => {
+
+    const testingDir = path.join(__dirname, "../.vue-gen-test");
+    await new Promise((resolve, reject) => {
+      helpers.testDirectory(testingDir, err => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve();
+        }
+      });
+    });
   });
 
   it("generate a project", async () => {
     const appPath = path.join(__dirname, "../vue");
-    generator = helpers.createGenerator("vue", [appPath], undefined, {
+    generator = helpers.createGenerator(appPath, [], [], {
       skipInstall: false
     });
-
+    helpers.mockPrompt(generator, { someAnswer: true });
     // Run yo-generator to output project.
     await Promise.resolve(generator.run());
   });
@@ -177,16 +213,14 @@ describe('generator-blockstack:vue', function () {
       'postcss.config.js',
       '.postcssrc.js',
       'vue.config.js',
-      'src/index.js',
-      'src/App.js',
-      'src/assets/style.css',
-      'src/main.js',
-      'src/routher.js',
-      'src/userSession.js',
       'src/App.vue',
+      'src/assets/styles.css',
+      'src/main.js',
+      'src/router.js',
+      'src/userSession.js',
       'src/components/Dashboard.vue',
       'src/components/Landing.vue',
-      'public/icon-192x192.png',
+      'src/views/Home.vue',
       'public/_headers',
       'public/_redirects',
       'public/avatar-placeholder.png',
@@ -202,4 +236,5 @@ describe('generator-blockstack:vue', function () {
   });
 
 });
-*/
+
+
