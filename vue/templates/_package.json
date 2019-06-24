@@ -22,7 +22,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit --coverage --coverageReporters=lcov",
-    "test": "echo works"
+    "test": "vue-cli-service build"
   },
   "dependencies": {
     "axios": "^0.18.0",

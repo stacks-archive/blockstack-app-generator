@@ -50,7 +50,7 @@ describe('generator-blockstack:app', function () {
     ]);
   });
 
-  it("run npm test", () => {
+  it("builds hello world", () => {
     // Ensure `npm test` succeeds in generated project.
     generator.spawnCommandSync("npm", ["test"]);
   });
@@ -103,7 +103,7 @@ describe('generator-blockstack:webpack', function () {
     ]);
   });
 
-  it("run npm test", () => {
+  it("builds hello world", () => {
     // Ensure `npm test` succeeds in generated project.
     generator.spawnCommandSync("npm", ["test"]);
   });
@@ -159,7 +159,7 @@ describe('generator-blockstack:react', function () {
     ]);
   });
 
-  it("run npm test", () => {
+  it("builds hello world", () => {
     // Ensure `npm test` succeeds in generated project.
     generator.spawnCommandSync("npm", ["test"]);
   });
@@ -230,7 +230,7 @@ describe('generator-blockstack:vue', function () {
     ]);
   });
 
-  it("run npm test", () => {
+  it("builds hello world", () => {
     // Ensure `npm test` succeeds in generated project.
     generator.spawnCommandSync("npm", ["test"]);
   });

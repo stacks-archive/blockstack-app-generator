@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server",
-    "test": "echo works"
+    "test": "webpack"
   },
   "devDependencies": {
     "webpack": "^4.29.6",
