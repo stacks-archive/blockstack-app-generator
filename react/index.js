@@ -104,4 +104,4 @@ class BlockstackReactGenerator extends Generator {
   }
 };
 
-module.exports = BlockstackReactGenerator;
+exports.default = BlockstackReactGenerator;
