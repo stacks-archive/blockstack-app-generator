@@ -93,6 +93,10 @@ class BlockstackGenerator extends Generator {
       this.templatePath('public/manifest.json'),
       this.destinationPath('public/manifest.json')
     );
+    this.fs.copy(
+      this.templatePath('public/white-logo.svg'),
+      this.destinationPath('public/white-logo.svg')
+    );
   }
 
   install() {

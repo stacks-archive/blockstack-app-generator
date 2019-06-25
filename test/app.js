@@ -47,6 +47,7 @@ describe('generator-blockstack:app', function () {
       'public/index.html',
       'public/manifest.json',
       'public/robots.txt',
+      'public/white-logo.svg'
     ]);
   });
 

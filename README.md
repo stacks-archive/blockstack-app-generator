@@ -68,8 +68,8 @@ npm run test
 This command will generate the four variants of Blockstack apps in folders called .app-gen-test,
 .webpack-gen-test, .react-gen-test, and .vue-gen-test and assert that all expected files were
 actually created. It also runs the `npm run test` command within each app. For the
-React, Webpack, and Vue generators, `npm run test` currenlty builds the app, but that command can be
-changed. (For React app, the typical test command is react-scripts test.)
+React, Webpack, and Vue generators, `npm run test` currently builds the app, but that command can be
+changed. (For a React app, the typical test command is `react-scripts test`.)
 
 ## License
 
