@@ -130,8 +130,12 @@ class BlockstackVueGenerator extends Generator {
       this.destinationPath('public/manifest.json')
     );
     this.fs.copy(
-      this.templatePath('public/logo.png'),
-      this.destinationPath('public/logo.png')
+      this.templatePath('public/favicon.ico'),
+      this.destinationPath('public/favicon.ico')
+    );
+    this.fs.copy(
+      this.templatePath('public/white-logo.svg'),
+      this.destinationPath('public/white-logo.svg')
     );
     this.fs.copy(
       this.templatePath('public/avatar-placeholder.png'),

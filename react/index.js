@@ -85,8 +85,8 @@ class BlockstackReactGenerator extends Generator {
     );
     // images, assets, and html
     this.fs.copy(
-      this.templatePath('public/icon-192x192.png'),
-      this.destinationPath('public/icon-192x192.png')
+      this.templatePath('public/favicon.ico'),
+      this.destinationPath('public/favicon.ico')
     )
     this.fs.copy(
       this.templatePath('public/index.html'),
@@ -100,6 +100,10 @@ class BlockstackReactGenerator extends Generator {
     this.fs.copy(
       this.templatePath('README.md'),
       this.destinationPath('README.md')
+    )
+    this.fs.copy(
+      this.templatePath('public/white-logo.svg'),
+      this.destinationPath('public/white-logo.svg')
     )
   }
 

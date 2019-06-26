@@ -3,7 +3,7 @@
   "start_url": "./index.html",
   "description": "A simple Hello, Blockstack app",
   "icons": [{
-    "src": "https://helloblockstack.com/icon-192x192.png",
+    "src": "favicon.ico",
     "sizes": "400x400",
     "type": "image/png"
   }]

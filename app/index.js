@@ -71,10 +71,7 @@ class BlockstackGenerator extends Generator {
       this.destinationPath('public/app.js')
     );
     // images
-    this.fs.copy(
-      this.templatePath('public/icon-192x192.png'),
-      this.destinationPath('public/icon-192x192.png')
-    )
+
     this.fs.copy(
       this.templatePath('public/favicon.ico'),
       this.destinationPath('public/favicon.ico')

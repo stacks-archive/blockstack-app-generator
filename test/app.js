@@ -43,7 +43,6 @@ describe('generator-blockstack:app', function () {
       'public/app.js',
       'public/bootstrap.min.css',
       'public/favicon.ico',
-      'public/icon-192x192.png',
       'public/index.html',
       'public/manifest.json',
       'public/robots.txt',
@@ -100,7 +99,9 @@ describe('generator-blockstack:webpack', function () {
       'dist/manifest.json',
       'dist/robots.txt',
       'dist/bootstrap.min.css',
-      'dist/icon-192x192.png'
+      'dist/avatar-placeholder.png',
+      'dist/favicon.ico',
+      'dist/white-logo.svg'
     ]);
   });
 
@@ -154,7 +155,8 @@ describe('generator-blockstack:react', function () {
       'src/Profile.js',
       'src/index.js',
       'src/setupProxy.js',
-      'public/icon-192x192.png',
+      'public/favicon.ico',
+      'public/white-logo.svg',
       'public/index.html',
       'public/manifest.json'
     ]);
@@ -225,7 +227,8 @@ describe('generator-blockstack:vue', function () {
       'public/_headers',
       'public/_redirects',
       'public/avatar-placeholder.png',
-      'public/logo.png',
+      'public/white-logo.svg',
+      'public/favicon.ico',
       'public/index.html',
       'public/manifest.json'
     ]);
