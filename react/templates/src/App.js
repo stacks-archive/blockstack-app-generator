@@ -1,4 +1,3 @@
-//import React, { Component, Link } from 'react';
 import React, { Component } from 'react';
 import Profile from './Profile.js';
 import Signin from './Signin.js';
