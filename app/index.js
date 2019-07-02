@@ -76,7 +76,7 @@ class BlockstackGenerator extends Generator {
       this.templatePath('public/favicon.ico'),
       this.destinationPath('public/favicon.ico')
     )
-    // html
+
     this.fs.copy(
       this.templatePath('public/index.html'),
       this.destinationPath('public/index.html')

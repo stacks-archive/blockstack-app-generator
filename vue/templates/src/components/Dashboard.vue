@@ -39,7 +39,6 @@ export default {
       const user = new blockstack.Person(profile)
       this.givenName = user.name() ? user.name() : 'Nameless Person'
       if (user.avatarUrl()) this.avatar = user.avatarUrl()
-      console.log(user.avatarUrl())
     } else if (blockstack.isSignInPending()) {
       blockstack.handlePendingSignIn()
         .then((userData) => {
