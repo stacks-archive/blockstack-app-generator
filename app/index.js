@@ -4,6 +4,13 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 
 class BlockstackGenerator extends Generator {
+
+  // The name `constructor` is important here
+  constructor(args, opts) {
+    // Calling the super constructor is important so our generator is correctly set up
+    super(args, opts);
+  }
+
   prompting() {
     // Have Yeoman greet the user.
     this.log(yosay(
@@ -64,15 +71,12 @@ class BlockstackGenerator extends Generator {
       this.destinationPath('public/app.js')
     );
     // images
-    this.fs.copy(
-      this.templatePath('public/icon-192x192.png'),
-      this.destinationPath('public/icon-192x192.png')
-    )
+
     this.fs.copy(
       this.templatePath('public/favicon.ico'),
       this.destinationPath('public/favicon.ico')
     )
-    // html
+
     this.fs.copy(
       this.templatePath('public/index.html'),
       this.destinationPath('public/index.html')
@@ -85,6 +89,10 @@ class BlockstackGenerator extends Generator {
     this.fs.copy(
       this.templatePath('public/manifest.json'),
       this.destinationPath('public/manifest.json')
+    );
+    this.fs.copy(
+      this.templatePath('public/white-logo.svg'),
+      this.destinationPath('public/white-logo.svg')
     );
   }
 
