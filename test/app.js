@@ -204,8 +204,6 @@ describe('generator-blockstack:vue', function () {
     assert.file([
       'babel.config.js',
       '.gitignore',
-      '.browserslistrc',
-      'docker-compose.yaml',
       '.editorconfig',
       '.eslintignore',
       '.eslintrc.js',

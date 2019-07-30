@@ -1,0 +1,10 @@
+{
+  "name": "Hello, Blockstack",
+  "start_url": "localhost:5000",
+  "description": "A simple demo of Blockstack Auth",
+  "icons": [{
+    "src": "favicon.ico",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]
+}

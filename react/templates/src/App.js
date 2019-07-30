@@ -11,9 +11,6 @@ const userSession = new UserSession({ appConfig: appConfig })
 
 export default class App extends Component {
 
-  constructor(props) {
-  	super(props);
-  }
 
   handleSignIn(e) {
     e.preventDefault();

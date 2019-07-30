@@ -39,14 +39,14 @@ class BlockstackVueGenerator extends Generator {
       this.templatePath('babel.config.js'),
       this.destinationPath('babel.config.js')
     );
-    this.fs.copy(
-      this.templatePath('browserslistrc'),
-      this.destinationPath('.browserslistrc')
-    );
-    this.fs.copy(
-      this.templatePath('docker-compose.yaml'),
-      this.destinationPath('docker-compose.yaml')
-    );
+    //this.fs.copy(
+    //  this.templatePath('browserslistrc'),
+     // this.destinationPath('.browserslistrc')
+    //);
+    //this.fs.copy(
+    //  this.templatePath('docker-compose.yaml'),
+    //  this.destinationPath('docker-compose.yaml')
+    //);
     this.fs.copy(
       this.templatePath('editorconfig'),
       this.destinationPath('.editorconfig')

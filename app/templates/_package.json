@@ -6,7 +6,7 @@
   "scripts": {
     "browserify": "browserify requires.js -o public/bundle.js",
     "start": "npm run browserify && node server.js",
-    "test": "echo works"
+    "test": "echo TODO: write tests"
   },
   "repository": {
     "type": "git",
