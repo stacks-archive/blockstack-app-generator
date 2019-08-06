@@ -1,0 +1,10 @@
+[build]
+  publish = "dist/"
+  command = "npm run build"
+
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Headers = "*"
+    Access-Control-Allow-Methods = "GET"
