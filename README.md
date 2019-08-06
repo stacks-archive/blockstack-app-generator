@@ -2,74 +2,49 @@
 
 ## Installation
 
-1) Install Blockstack for desktop:
+1. If not already installed, install [node.js](https://nodejs.org/)
+2. Install [Yeoman](http://yeoman.io) and the blockstack app generator using [npm](https://www.npmjs.com/
 
-- [Releases](https://github.com/blockstack/blockstack-browser/releases)
+    ```bash
+    npm install -g yo generator-blockstack
+    ```
 
-2) Install [Yeoman](http://yeoman.io) and the blockstack app generator using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+3. Create a new directory and `cd` into it:
 
-```bash
-npm install -g yo generator-blockstack
-```
+    ```bash
+    mkdir hello-blockstack
+    cd hello-blockstack
+    ```
 
-3) Create a new directory and `cd` into it:
+4. Generate a Blockstack app, you can specify the framework.
 
-```bash
-mkdir hello-blockstack && cd $_
-```
+    | Framework | Use this command to install |
+    |------------------|-----------------------------|
+    | Plain Javascript | `yo blockstack` |
+    | Webpack | `yo blockstack:webpack` |
+    | React | `yo blockstack:react` |
+    | Vue | `yo blockstack:vue` |
 
-4) Generate your Blockstack app:
+5. Start the development server:
 
-```bash
-yo blockstack
-```
+    ```bash
+    npm run start
+    ```
 
----
+## Testing the generator
 
-*For Webpack*
-
-```bash
-yo blockstack:webpack
-```
-
----
-
-*For React.JS*
-
-```bash
-yo blockstack:react
-```
-
-
-
----
-
-*For Vue.JS*
-
-```bash
-yo blockstack:vue
-```
-
----
-
-5) Start the development server:
-
-```bash
-npm run start
-```
-
-## Testing
-
-*For all generators*
+The single tests works for all generators:
 
 
 ```bash
 npm run test
 ```
 
-This command will generate the four variants of Blockstack apps in folders called .app-gen-test,
-.webpack-gen-test, .react-gen-test, and .vue-gen-test and assert that all expected files were
-actually created. It also runs the `npm run test` command within each app. For the
+This command will generate the four variants of Blockstack apps in folders called `.app-gen-test`,
+`.webpack-gen-test`, `.react-gen-test`, and `.vue-gen-test`. The test asserts that all expected files were
+actually created. It also runs the `npm run test` command within each app. F
+
+or the
 React, Webpack, and Vue generators, `npm run test` currently builds the app, but that command can be
 changed. (For a React app, the typical test command is `react-scripts test`.)
 
