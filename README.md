@@ -57,5 +57,5 @@ MIT © [Blockstack](https://blockstack.com)
 [npm-url]: https://www.npmjs.com/package/generator-blockstack
 [circleci-image]: https://circleci.com/gh/blockstack/blockstack-app-generator.svg?style=shield&circle-token=:circle-token
 [circleci-url]: https://circleci.com/gh/blockstack/blockstack-app-generator/tree/master
-[slack-image]: http://slack.blockstack.org/badge.svg
+[slack-image]: https://img.shields.io/badge/join-slack-e32072.svg
 [slack-url]: http://slack.blockstack.org/
