@@ -12,7 +12,8 @@
 3. Create a new directory and `cd` into it:
 
     ```bash
-    mkdir hello-blockstack && cd $_
+    mkdir hello-blockstack
+    cd hello-blockstack
     ```
 
 4. Generate a Blockstack app, you can specify the framework.
