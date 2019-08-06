@@ -1,6 +1,6 @@
 {
   "name": "generator-blockstack",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "A set of yeoman generators building Blockstack apps",
   "homepage": "https://blocktack.org",
   "author": {
