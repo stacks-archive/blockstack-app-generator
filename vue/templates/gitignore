@@ -1,0 +1,29 @@
+.DS_Store
+node_modules
+/dist
+
+# Coverage outputs
+coverage/*
+
+# Get rid of .empty files
+.nyc_output/.empty
+coverage/.empty
+!.empty
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

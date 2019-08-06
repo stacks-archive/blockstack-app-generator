@@ -19,6 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (person.avatarUrl()) {
         document.getElementById('avatar-image').setAttribute('src', person.avatarUrl())
       }
+      else {
+        document.getElementById('avatar-image').setAttribute('src', './avatar-placeholder.png')
+      }
       document.getElementById('section-1').style.display = 'none'
       document.getElementById('section-2').style.display = 'block'
     }

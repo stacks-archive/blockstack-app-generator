@@ -30,6 +30,12 @@ build/Release
 node_modules
 jspm_packages
 
+# Testing directories
+.app-gen-test
+.webpack-gen-test
+.react-gen-test
+.vue-gen-test
+
 # Optional npm cache directory
 .npm
 
