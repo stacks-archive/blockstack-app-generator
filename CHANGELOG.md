@@ -2,7 +2,7 @@
 
 ## 0.7.0 - August 6, 2019
 - Added Vue.js generator. 
-- Updated react generator to use `react-scripts`. 
+- Updated React generator to use `react-scripts`. 
 - Updated generators to use blockstack.js v19.2.5. 
 - Updated yeoman dependencies. 
 - Updated webpage styling. 
