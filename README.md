@@ -3,33 +3,36 @@
 ## Installation
 
 1. If not already installed, install [node.js](https://nodejs.org/)
-2. Install [Yeoman](http://yeoman.io) and the blockstack app generator using [npm](https://www.npmjs.com/
 
-    ```bash
-    npm install -g yo generator-blockstack
-    ```
-
-3. Create a new directory and `cd` into it:
+2. Create a new directory and `cd` into it:
 
     ```bash
     mkdir hello-blockstack
     cd hello-blockstack
     ```
-
-4. Generate a Blockstack app, you can specify the framework.
+    
+3. Generate a Blockstack app, you can specify the framework.
 
     | Framework | Use this command to install |
     |------------------|-----------------------------|
-    | Plain Javascript | `yo blockstack` |
-    | Webpack | `yo blockstack:webpack` |
-    | React | `yo blockstack:react` |
-    | Vue | `yo blockstack:vue` |
+    | Plain Javascript | `npm init yo blockstack` |
+    | Webpack | `npm init yo blockstack:webpack` |
+    | React | `npm init yo blockstack:react` |
+    | Vue | `npm init yo blockstack:vue` |
 
-5. Start the development server:
+
+  > Alternatively, global package installation can be used. Try this if running into problems:
+  > ```
+  > npm install -g yo generator-blockstack
+  > yo blockstack
+  > ```
+
+4. Start the development server:
 
     ```bash
     npm run start
     ```
+
 
 ## Testing the generator
 
@@ -42,9 +45,7 @@ npm run test
 
 This command will generate the four variants of Blockstack apps in folders called `.app-gen-test`,
 `.webpack-gen-test`, `.react-gen-test`, and `.vue-gen-test`. The test asserts that all expected files were
-actually created. It also runs the `npm run test` command within each app. F
-
-or the
+actually created. It also runs the `npm run test` command within each app. For the
 React, Webpack, and Vue generators, `npm run test` currently builds the app, but that command can be
 changed. (For a React app, the typical test command is `react-scripts test`.)
 
