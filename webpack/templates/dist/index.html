@@ -1,37 +1,104 @@
 <!doctype html>
-<html>
- <head>
-   <title>Hello Blockstack</title>
-   <link rel="icon" type="image/x-icon" href="favicon.ico" />
-   <link rel="stylesheet" href="bootstrap.min.css" />
-   <link rel="stylesheet" href="app.css" />
+<html lang="en">
 
-   <!-- Include webpack generated bundle -->
-   <script src="main.js"></script>
- </head>
- <body>
-    <div class="site-wrapper">
-        <div class="site-wrapper-inner">
-          <div class="panel-landing" id="section-1">
-            <h1 class="landing-heading">Hello, Blockstack!</h1>
-            <p class="lead">
-              <a href="#" class="btn btn-primary btn-lg" id="signin-button">
-                Sign In with Blockstack
-              </a>
-            </p>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <title>Hello Blockstack</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <!-- App css -->
+  <link rel="stylesheet" href="app.css" />
+
+  <!-- Include webpack generated bundle -->
+  <script src="main.js"></script>
+
+</head>
+
+<body class="dropzone">
+  <div class="container d-flex py-5">
+    <div class="align-self-center mx-auto text-center">
+
+      <!-- Signed out page -->
+      <div class="panel-landing" id="section-1">
+        <h1 class="landing-heading">Hello, Blockstack!</h1>
+        <p class="lead">
+          <button type="button" class="btn btn-primary btn-lg auth-btn" id="signin-button">
+            Sign In with Blockstack
+          </button>
+        </p>
+      </div>
+
+      <!-- Signed in page -->
+      <div class="panel-welcome hide" id="section-2">
+        <div class="avatar-section">
+          <img class="img-rounded avatar" id="avatar-image">
+        </div>
+        <h1>Hello, <span id="heading-name">Anonymous</span>!</h1>
+        <p class="lead">
+          <button type="button" class="btn btn-primary btn-lg auth-btn" id="signout-button">
+            Logout
+          </button>
+          <!-- Upload file button -->
+          <div class="custom-file">
+            <input type="file" accept="image/*" class="custom-file-input" id="photo-upload-input">
+            <label class="custom-file-label" for="photo-upload-input">Drop image file</label>
           </div>
-          <div class="panel-welcome hide" id="section-2">
-            <div class="avatar-section">
-              <img class="img-rounded avatar" id="avatar-image">
-            </div>
-            <h1>Hello, <span id="heading-name">Anonymous</span>!</h1>
-            <p class="lead">
-              <a href="#" class="btn btn-primary btn-lg" id="signout-button">
-                Logout
-              </a>
-            </p>
-          </div>
+        </p>
+        <!-- Uploaded photo cards -->
+        <div id="image-cards" class="card-deck text-center d-flex justify-content-center">
         </div>
       </div>
- </body>
+
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="error-modal-title"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="error-modal-title">Modal title</h5>
+          <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <span class="text-secondary font-italic">Check the Developer Console for additional details</span>
+          <button type="button" class="btn btn-secondary close-modal" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image card template -->
+  <template id="image-card-template">
+    <div class="card">
+      <div class="text-center loading-spinner">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <button type="button" class="loading-error btn btn-outline-danger m-3 d-none">Error loading</button>
+      <img class="card-img-top card-image d-none" alt="...">
+      <div class="card-body">
+        <h6 class="card-title text-dark">Card title</h6>
+      </div>
+      <div class="card-footer">
+        <button type="button" class="btn btn-sm btn-outline-secondary delete-button">Delete</button>
+      </div>
+    </div>
+  </template>
+
+</body>
+
 </html>

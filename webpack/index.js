@@ -9,7 +9,7 @@ class BlockstackWebpackGenerator extends Generator {
     // Calling the super constructor is important so our generator is correctly set up
     super(args, opts);
   }
-  
+
   prompting() {
     // Have Yeoman greet the user.
     this.log(yosay(
@@ -58,10 +58,6 @@ class BlockstackWebpackGenerator extends Generator {
     this.fs.copy(
       this.templatePath('dist/app.css'),
       this.destinationPath('dist/app.css')
-    );
-    this.fs.copy(
-      this.templatePath('dist/bootstrap.min.css'),
-      this.destinationPath('dist/bootstrap.min.css')
     );
     // images
     this.fs.copy(

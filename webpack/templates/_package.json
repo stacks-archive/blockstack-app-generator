@@ -14,6 +14,6 @@
     "webpack-dev-server": "^3.5.1"
   },
   "dependencies": {
-    "blockstack": "^19.2.5"
+    "blockstack": "github:blockstack/blockstack.js#feature/file-api-additions"
   }
 }
