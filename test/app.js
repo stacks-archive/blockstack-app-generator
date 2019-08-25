@@ -100,7 +100,6 @@ describe('generator-blockstack:webpack', function () {
       'dist/index.html',
       'dist/manifest.json',
       'dist/robots.txt',
-      'dist/bootstrap.min.css',
       'dist/avatar-placeholder.png',
       'dist/favicon.ico',
       'dist/white-logo.svg'
