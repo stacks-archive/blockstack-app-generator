@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Setup file upload via `<input type="file">` element
   document.getElementById('photo-upload-input').addEventListener('change', (event) => {
-    const file = event.target.files[0]
+    const file = event.target.files[0];
     if (file) {
       event.target.value = null;
       uploadFile(file);
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log(`Uploaded file result: ${uploadResult}`);
       setImageResult(null, URL.createObjectURL(file));
     } catch (error) {
-      setLoadedImage(error);
+      setImageResult(error);
     }
   }
 
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (error) {
         const errorLoading = card.querySelector('.loading-error');
         errorLoading.classList.remove('d-none');
-        errorLoading.onclick = () => displayErrorModal(`Error loading ${imageName}`, error)
+        errorLoading.onclick = () => displayErrorModal(`Error loading ${fileName}`, error);
       }
     };
   }
