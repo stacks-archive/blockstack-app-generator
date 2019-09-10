@@ -11,22 +11,7 @@ class BlockstackVueGenerator extends Generator {
   }
 
   prompting() {
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the ' + chalk.red('Blockstack') + ' app generator!'
-    ));
 
-    var prompts = [{
-      type: 'confirm',
-      name: 'someAnswer',
-      message: 'Are you ready to build a Blockstack app in React?',
-      default: true
-    }];
-
-    return this.prompt(prompts).then(function (props) {
-      // To access props later use this.props.someAnswer
-      this.props = props;
-    }.bind(this));
   }
 
   writing() {
@@ -75,8 +60,8 @@ class BlockstackVueGenerator extends Generator {
       this.templatePath('postcssrc.js'),
       this.destinationPath('.postcssrc.js')
     );
-      
-    
+
+
     this.fs.copy(
       this.templatePath('src/App.vue'),
       this.destinationPath('src/App.vue')
@@ -155,4 +140,4 @@ class BlockstackVueGenerator extends Generator {
   }
 };
 
-exports.default = BlockstackVueGenerator;
+module.exports = BlockstackVueGenerator;

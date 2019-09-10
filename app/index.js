@@ -9,98 +9,60 @@ class BlockstackGenerator extends Generator {
   constructor(args, opts) {
     // Calling the super constructor is important so our generator is correctly set up
     super(args, opts);
-  }
-
-  prompting() {
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the ' + chalk.red('Blockstack') + ' app generator!'
-    ));
-
-    var prompts = [{
-      type: 'confirm',
-      name: 'someAnswer',
-      message: 'Are you ready to build a Blockstack app?',
-      default: true
-    }];
-
-    return this.prompt(prompts).then(function (props) {
-      // To access props later use this.props.someAnswer
-      this.props = props;
-    }.bind(this));
-  }
-
-  writing() {
-    this.fs.copy(
-      this.templatePath('_package.json'),
-      this.destinationPath('package.json')
-    );
-    this.fs.copy(
-      this.templatePath('editorconfig'),
-      this.destinationPath('.editorconfig')
-    );
-    this.fs.copy(
-      this.templatePath('gitignore'),
-      this.destinationPath('.gitignore')
-    );
-    this.fs.copy(
-      this.templatePath('requires.js'),
-      this.destinationPath('requires.js')
-    );
-    this.fs.copy(
-      this.templatePath('firebase.json'),
-      this.destinationPath('firebase.json')
-    );
-    // server
-    this.fs.copy(
-      this.templatePath('server.js'),
-      this.destinationPath('server.js')
-    );
-    // styles
-    this.fs.copy(
-      this.templatePath('public/app.css'),
-      this.destinationPath('public/app.css')
-    );
-    this.fs.copy(
-      this.templatePath('public/bootstrap.min.css'),
-      this.destinationPath('public/bootstrap.min.css')
-    );
-    // scripts
-    this.fs.copy(
-      this.templatePath('public/app.js'),
-      this.destinationPath('public/app.js')
-    );
-    // images
-
-    this.fs.copy(
-      this.templatePath('public/favicon.ico'),
-      this.destinationPath('public/favicon.ico')
-    )
-
-    this.fs.copy(
-      this.templatePath('public/index.html'),
-      this.destinationPath('public/index.html')
-    );
-    // publicExtras
-    this.fs.copy(
-      this.templatePath('public/robots.txt'),
-      this.destinationPath('public/robots.txt')
-    );
-    this.fs.copy(
-      this.templatePath('public/manifest.json'),
-      this.destinationPath('public/manifest.json')
-    );
-    this.fs.copy(
-      this.templatePath('public/white-logo.svg'),
-      this.destinationPath('public/white-logo.svg')
-    );
-  }
-
-  install() {
-    this.installDependencies({
-      bower: false
+    this.option('react', {
+      description: 'Generate a React app without prompting',
+      type: Boolean
+    });
+    this.option('plain', {
+      description: 'Generate a plain JavaScript app without prompting',
+      type: Boolean
+    });
+    this.option('vue', {
+      description: 'Generate a Vue app without prompting',
+      type: Boolean
     });
   }
+
+  async prompting() {
+    if (this.options.react) {
+      this.outputAppType = 'react';
+    } else if (this.options.plain) {
+      this.outputAppType = 'plain';
+    } else if (this.options.vue) {
+      this.outputAppType = 'vue';
+    } else {
+
+      // Have Yeoman greet the user.
+      this.log(yosay(
+        'Welcome to the ' + chalk.red('Blockstack') + ' app generator!'
+      ));
+
+      const answers = await this.prompt([{
+        type: 'list',
+        name: 'generator_type',
+        message: 'Select Blockstack app output type',
+        choices: [
+          { name: 'React', value: 'react' },
+          { name: 'Plain JavaScript', value: 'plain' },
+          { name: 'Vue', value: 'vue' }
+        ]
+      }]);
+      this.outputAppType = answers['generator_type'];
+    }
+  }
+
+  main() {
+    if (this.outputAppType === 'react') {
+      return this.composeWith(require.resolve('../react'));
+    } else if (this.outputAppType === 'plain') {
+      return this.composeWith(require.resolve('../webpack'));
+    } else if (this.outputAppType === 'vue') {
+      return this.composeWith(require.resolve('../vue'));
+    } else {
+      throw new Error(`Unexpected app output type selected: ${this.outputAppType}`);
+    }
+  }
+
 }
 
 module.exports = BlockstackGenerator;

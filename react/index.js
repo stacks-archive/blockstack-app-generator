@@ -9,24 +9,9 @@ class BlockstackReactGenerator extends Generator {
     // Calling the super constructor is important so our generator is correctly set up
     super(args, opts);
   }
-  
+
   prompting() {
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the ' + chalk.red('Blockstack') + ' app generator!'
-    ));
 
-    var prompts = [{
-      type: 'confirm',
-      name: 'someAnswer',
-      message: 'Are you ready to build a Blockstack app in React?',
-      default: true
-    }];
-
-    return this.prompt(prompts).then(function (props) {
-      // To access props later use this.props.someAnswer
-      this.props = props;
-    }.bind(this));
   }
 
   writing() {
@@ -114,4 +99,4 @@ class BlockstackReactGenerator extends Generator {
   }
 };
 
-exports.default = BlockstackReactGenerator;
+module.exports = BlockstackReactGenerator;
