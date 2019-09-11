@@ -10,15 +10,15 @@ class BlockstackGenerator extends Generator {
     // Calling the super constructor is important so our generator is correctly set up
     super(args, opts);
     this.option('react', {
-      description: 'Generate a React app without prompting',
+      description: 'Generate a React project template',
       type: Boolean
     });
     this.option('plain', {
-      description: 'Generate a plain JavaScript app without prompting',
+      description: 'Generate a plain Javascript project template',
       type: Boolean
     });
     this.option('vue', {
-      description: 'Generate a Vue app without prompting',
+      description: 'Generate a Vue project template',
       type: Boolean
     });
   }
@@ -40,7 +40,7 @@ class BlockstackGenerator extends Generator {
       const answers = await this.prompt([{
         type: 'list',
         name: 'generator_type',
-        message: 'Select Blockstack app output type',
+        message: 'What type of project scaffolding do you want to generate?',
         choices: [
           { name: 'React', value: 'react' },
           { name: 'Plain JavaScript', value: 'plain' },
