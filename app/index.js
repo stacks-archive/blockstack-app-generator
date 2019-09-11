@@ -38,9 +38,10 @@ class BlockstackGenerator extends Generator {
       ));
 
       const answers = await this.prompt([{
-        type: 'list',
+        type: 'rawlist',
         name: 'generator_type',
         message: 'What type of project scaffolding do you want to generate?',
+        suffix: ` ${chalk.dim('(Use arrow keys to select and press ENTER)')}`,
         choices: [
           { name: 'React', value: 'react' },
           { name: 'Plain JavaScript', value: 'plain' },
