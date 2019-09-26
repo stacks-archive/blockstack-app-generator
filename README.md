@@ -19,13 +19,13 @@
     | React | `npx generator-blockstack --react` |
     | Vue | `npx generator-blockstack --vue` |
 
-  For additional options run `npx generator-blockstack --help`.
+    For additional options run `npx generator-blockstack --help`.
 
-  > Alternatively, global package installation can be used. Try this if running into problems:
-  > ```
-  > npm install -g yo generator-blockstack
-  > yo blockstack
-  > ```
+    > Alternatively, global package installation can be used. Try this if running into problems:
+    > ```
+    > npm install -g yo generator-blockstack
+    > yo blockstack
+    > ```
 
 4. Start the development server:
 
