@@ -12,9 +12,12 @@
     "app",
     "react",
     "webpack",
-    "vue"
+    "vue",
+    "lib",
+    "cmd"
   ],
-  "main": "generators/index.js",
+  "bin": "./cmd/index.js",
+  "main": "lib/index.js",
   "keywords": [
     "blockstack",
     "apps",
@@ -23,13 +26,13 @@
   ],
   "dependencies": {
     "chalk": "^2.4.2",
-    "yeoman-generator": "^4.0.1",
+    "yeoman-environment": "^2.4.0",
+    "yeoman-generator": "^4.0.2",
     "yosay": "^2.0.2"
   },
   "devDependencies": {
     "mocha": "^6.2.0",
     "yeoman-assert": "^3.1.1",
-    "yeoman-environment": "^2.4.0",
     "yeoman-test": "^2.0.0"
   },
   "repository": "github:blockstack/blockstack-app-generator",

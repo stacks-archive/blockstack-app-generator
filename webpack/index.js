@@ -9,24 +9,9 @@ class BlockstackWebpackGenerator extends Generator {
     // Calling the super constructor is important so our generator is correctly set up
     super(args, opts);
   }
-  
+
   prompting() {
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the ' + chalk.red('Blockstack') + ' app generator!'
-    ));
 
-    var prompts = [{
-      type: 'confirm',
-      name: 'someAnswer',
-      message: 'Are you ready to build a Blockstack app?',
-      default: true
-    }];
-
-    return this.prompt(prompts).then(function (props) {
-      // To access props later use this.props.someAnswer
-      this.props = props;
-    }.bind(this));
   }
 
   writing() {

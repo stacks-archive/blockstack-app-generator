@@ -3,6 +3,147 @@ const path = require('path');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
 
+describe('generator-blockstack integrated initializer [react]', function () {
+  this.enableTimeouts(false)
+
+  let testingDir;
+  let runEnv;
+
+  before(async () => {
+    testingDir = path.join(__dirname, "../.integrated-app-gen-test-react");
+    await new Promise((resolve, reject) => {
+      helpers.testDirectory(testingDir, err => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve();
+        }
+      });
+    });
+  });
+
+  it("create app generator", async () => {
+    const modularGen = require('../lib/index');
+    const result = modularGen.createAppGen({
+      args: ['--react'],
+      options: { skipInstall: true }
+    });
+    runEnv = result.run;
+  });
+
+  it("generate a project", async () => {
+    await runEnv();
+  });
+
+  it('creates files', function () {
+    assert.file(['package.json']);
+  });
+
+  after(async () => {
+    // Clean temp output dir.
+    await new Promise((resolve, reject) => {
+      helpers.testDirectory(testingDir, err => {
+        if (err) { reject(err); } else { resolve(); }
+      });
+    });
+  });
+
+});
+
+describe('generator-blockstack integrated initializer [vue]', function () {
+  this.enableTimeouts(false)
+
+  let testingDir;
+  let runEnv;
+
+  before(async () => {
+    testingDir = path.join(__dirname, "../.integrated-app-gen-test-vue");
+    await new Promise((resolve, reject) => {
+      helpers.testDirectory(testingDir, err => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve();
+        }
+      });
+    });
+  });
+
+  it("create app generator", async () => {
+    const modularGen = require('../lib/index');
+    const result = modularGen.createAppGen({
+      args: ['--vue'],
+      options: { skipInstall: true }
+    });
+    runEnv = result.run;
+  });
+
+  it("generate a project", async () => {
+    await runEnv();
+  });
+
+  it('creates files', function () {
+    assert.file(['package.json']);
+  });
+
+  after(async () => {
+    // Clean temp output dir.
+    await new Promise((resolve, reject) => {
+      helpers.testDirectory(testingDir, err => {
+        if (err) { reject(err); } else { resolve(); }
+      });
+    });
+  });
+
+});
+
+describe('generator-blockstack integrated initializer [plain]', function () {
+  this.enableTimeouts(false)
+
+  let testingDir;
+  let runEnv;
+
+  before(async () => {
+    testingDir = path.join(__dirname, "../.integrated-app-gen-test-plain");
+    await new Promise((resolve, reject) => {
+      helpers.testDirectory(testingDir, err => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve();
+        }
+      });
+    });
+  });
+
+  it("create app generator", async () => {
+    const modularGen = require('../lib/index');
+    const result = modularGen.createAppGen({
+      args: ['--plain'],
+      options: { skipInstall: true }
+    });
+    runEnv = result.run;
+  });
+
+  it("generate a project", async () => {
+    await runEnv();
+  });
+
+  it('creates files', function () {
+    assert.file(['package.json']);
+  });
+
+  after(async () => {
+    // Clean temp output dir.
+    await new Promise((resolve, reject) => {
+      helpers.testDirectory(testingDir, err => {
+        if (err) { reject(err); } else { resolve(); }
+      });
+    });
+  });
+
+});
+
 describe('generator-blockstack:app', function () {
   this.enableTimeouts(false)
 
@@ -27,7 +168,7 @@ describe('generator-blockstack:app', function () {
     generator = helpers.createGenerator(appPath, [], [], {
       skipInstall: false
     });
-    helpers.mockPrompt(generator, { someAnswer: true });
+    helpers.mockPrompt(generator, { generator_type: 'plain' });
     // Run yo-generator to output project.
     await Promise.resolve(generator.run());
   });
@@ -36,17 +177,19 @@ describe('generator-blockstack:app', function () {
     assert.file([
       '.gitignore',
       'package.json',
+      'webpack.config.js',
+      'netlify.toml',
+      'amplify.yml',
       'firebase.json',
-      'requires.js',
-      'server.js',
-      'public/app.css',
-      'public/app.js',
-      'public/bootstrap.min.css',
-      'public/favicon.ico',
-      'public/index.html',
-      'public/manifest.json',
-      'public/robots.txt',
-      'public/white-logo.svg'
+      'src/index.js',
+      'dist/app.css',
+      'dist/index.html',
+      'dist/manifest.json',
+      'dist/robots.txt',
+      'dist/bootstrap.min.css',
+      'dist/avatar-placeholder.png',
+      'dist/favicon.ico',
+      'dist/white-logo.svg'
     ]);
   });
 
