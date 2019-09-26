@@ -2,7 +2,7 @@
 
 ## Installation
 
-1. If not already installed, install [node.js](https://nodejs.org/)
+1. If not already installed, install [Node.js](https://nodejs.org/) v10 or higher _(minimum required version is Node.js v8)_.
 
 2. Create a new directory and `cd` into it:
 
@@ -15,11 +15,11 @@
 
     | Framework | Use this command to install |
     |------------------|-----------------------------|
-    | Plain Javascript | `npm init yo blockstack` |
-    | Webpack | `npm init yo blockstack:webpack` |
-    | React | `npm init yo blockstack:react` |
-    | Vue | `npm init yo blockstack:vue` |
+    | Plain Javascript | `npx generator-blockstack --plain` |
+    | React | `npx generator-blockstack --react` |
+    | Vue | `npx generator-blockstack --vue` |
 
+  For additional options run `npx generator-blockstack --help`.
 
   > Alternatively, global package installation can be used. Try this if running into problems:
   > ```
@@ -43,9 +43,15 @@ The single tests works for all generators:
 npm run test
 ```
 
-This command will generate the four variants of Blockstack apps in folders called `.app-gen-test`,
-`.webpack-gen-test`, `.react-gen-test`, and `.vue-gen-test`. The test asserts that all expected files were
-actually created. It also runs the `npm run test` command within each app. For the
+
+
+## Contributing
+
+### Testing
+
+Within the repo directory, run `npm run test`. This command will generate the variants of Blockstack apps 
+in folders called `.app-gen-test`, `.webpack-gen-test`, `.react-gen-test`, and `.vue-gen-test`. The test asserts 
+that all expected files were actually created. It also runs the `npm run test` command within each app. For the
 React, Webpack, and Vue generators, `npm run test` currently builds the app, but that command can be
 changed. (For a React app, the typical test command is `react-scripts test`.)
 
