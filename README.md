@@ -34,7 +34,7 @@
     ```
 
 
-## Testing the generator
+## Testing the generated app
 
 The single tests works for all generators:
 
@@ -44,10 +44,7 @@ npm run test
 ```
 
 
-
-## Contributing
-
-### Testing
+## Testing the generator project
 
 Within the repo directory, run `npm run test`. This command will generate the variants of Blockstack apps 
 in folders called `.app-gen-test`, `.webpack-gen-test`, `.react-gen-test`, and `.vue-gen-test`. The test asserts 
