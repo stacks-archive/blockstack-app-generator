@@ -34,10 +34,15 @@ export default {
   },
   mounted () {
     const blockstack = this.blockstack
+
     if (blockstack.isUserSignedIn()) {
       const profile = blockstack.loadUserData().profile
       const user = new blockstack.Person(profile)
-      this.givenName = user.name() ? user.name() : 'Nameless Person'
+      const username = userSession.loadUserData().username
+      const personname = userSession.loadUserData().givenName
+
+      this.givenName = personname || username || 'Nameless Person'
+
       if (user.avatarUrl()) this.avatar = user.avatarUrl()
     } else if (blockstack.isSignInPending()) {
       blockstack.handlePendingSignIn()
