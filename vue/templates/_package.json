@@ -2,7 +2,12 @@
   "name": "hello-blockstack",
   "version": "6.0.1",
   "description": "A decentralized Todo app built on Blockstack",
-  "author": "Michael Stivala <michaelstivala@me.com> (https://michaelstivala.com/)",
+  "author": {
+    "name": "Blockstack PBC",
+    "email": "editors@blockstack.com",
+    "url": "https://blockstack.org"
+  },
+  "author": 
   "contributors": [
     "Aaron Blankstein <aaron@blockstack.com> (https://github.com/kantai)",
     "Larry Salibra <hello@larrysalibra.com> (https://larrysalibra.com/)",
@@ -10,7 +15,8 @@
     "Kim Hallberg <work@hallberg.kim> (https://hallberg.kim/)",
     "Guy Lepage <guylepage3@gmail.com> (https://lepage.cc/)",
     "Jack Zampolin (https://github.com/jackzampolin)",
-    "Moxiegirl (https://github.com/moxiegirl)"
+    "Mary Anthony (https://github.com/moxiegirl)",
+    "Michael Stivala <michaelstivala@me.com> (https://michaelstivala.com/)",
   ],
   "repository": {
     "type": "git",

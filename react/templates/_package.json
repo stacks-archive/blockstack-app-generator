@@ -9,7 +9,11 @@
   "bugs": {
     "url": "https://github.com/blockstack/hello-blockstack/issues"
   },
-  "author": "",
+  "author": {
+    "name": "Blockstack PBC",
+    "email": "editors@blockstack.com",
+    "url": "https://blockstack.org"
+  },
   "license": "MIT",
   "dependencies": {
     "blockstack": "^19.2.5",
