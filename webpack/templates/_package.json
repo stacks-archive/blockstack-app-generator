@@ -8,6 +8,11 @@
     "start": "webpack-dev-server",
     "test": "webpack"
   },
+  "author": {
+    "name": "Blockstack PBC",
+    "email": "editors@blockstack.com",
+    "url": "https://blockstack.org"
+  },
   "devDependencies": {
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",

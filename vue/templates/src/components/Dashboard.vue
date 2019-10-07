@@ -3,7 +3,7 @@
     <div class="avatar-section">
       <img :src="avatar" class="img-rounded avatar" id="avatar-image">
     </div>
-    <h1 class="landing-heading">Hello, <span id="heading-name">{{ givenName }}</span>!</h1>
+    <h1>Hello, <span id="heading-name">{{ givenName }}</span>!</h1>
     <p class="lead">
       <a
         href="#"
@@ -34,10 +34,15 @@ export default {
   },
   mounted () {
     const blockstack = this.blockstack
+
     if (blockstack.isUserSignedIn()) {
       const profile = blockstack.loadUserData().profile
       const user = new blockstack.Person(profile)
-      this.givenName = user.name() ? user.name() : 'Nameless Person'
+      const username = userSession.loadUserData().username
+      const personname = userSession.loadUserData().givenName
+
+      this.givenName = personname || username || 'Nameless Person'
+
       if (user.avatarUrl()) this.avatar = user.avatarUrl()
     } else if (blockstack.isSignInPending()) {
       blockstack.handlePendingSignIn()
