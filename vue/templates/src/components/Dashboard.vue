@@ -3,7 +3,7 @@
     <div class="avatar-section">
       <img :src="avatar" class="img-rounded avatar" id="avatar-image">
     </div>
-    <h1 class="landing-heading">Hello, <span id="heading-name">{{ givenName }}</span>!</h1>
+    <h1>Hello, <span id="heading-name">{{ givenName }}</span>!</h1>
     <p class="lead">
       <a
         href="#"
