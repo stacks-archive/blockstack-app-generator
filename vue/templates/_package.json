@@ -7,17 +7,6 @@
     "email": "editors@blockstack.com",
     "url": "https://blockstack.org"
   },
-  "author": 
-  "contributors": [
-    "Aaron Blankstein <aaron@blockstack.com> (https://github.com/kantai)",
-    "Larry Salibra <hello@larrysalibra.com> (https://larrysalibra.com/)",
-    "Arjun Balaji <arjunblj@gmail.com> (https://github.com/arjunblj)",
-    "Kim Hallberg <work@hallberg.kim> (https://hallberg.kim/)",
-    "Guy Lepage <guylepage3@gmail.com> (https://lepage.cc/)",
-    "Jack Zampolin (https://github.com/jackzampolin)",
-    "Mary Anthony (https://github.com/moxiegirl)",
-    "Michael Stivala <michaelstivala@me.com> (https://michaelstivala.com/)",
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/blockstack/blockstack-todos"
