@@ -19,6 +19,9 @@
     "webpack-dev-server": "^3.5.1"
   },
   "dependencies": {
-    "blockstack": "^19.2.5"
+    "@blockstack/connect": "^2.4.0",
+    "blockstack": "^19.2.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
