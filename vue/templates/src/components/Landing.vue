@@ -16,11 +16,22 @@
 
 <script>
 import { userSession } from '../userSession'
+import { showBlockstackConnect } from '@blockstack/connect'
 export default {
   name: 'signin',
   methods: {
     signIn () {
-      userSession.redirectToSignIn()
+      const authOptions = {
+        appDetails: {
+          name: 'Blockstack App',
+          icon: window.location.origin + '/favicon.ico'
+        },
+        userSession,
+        finished: ({ userSession }) => {
+          window.location = window.location.origin
+        }
+      }
+      showBlockstackConnect(authOptions)
     }
   }
 }
