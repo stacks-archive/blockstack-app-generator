@@ -5,33 +5,42 @@ import {
   UserSession,
   AppConfig
 } from 'blockstack';
+import { Connect } from '@blockstack/connect';
 
 const appConfig = new AppConfig()
 const userSession = new UserSession({ appConfig: appConfig })
 
 export default class App extends Component {
-
-
-  handleSignIn(e) {
-    e.preventDefault();
-    userSession.redirectToSignIn();
+  state = {
+    userData: null,
   }
 
   handleSignOut(e) {
     e.preventDefault();
+    this.setState({ userData: null });
     userSession.signUserOut(window.location.origin);
   }
 
   render() {
+    const { userData } = this.state;
+    const authOptions = {
+      appDetails: {
+        name: 'Blockstack App',
+        icon: window.location.origin + '/favicon.ico'
+      },
+      userSession,
+      finished: ({ userSession }) => {
+        this.setState({ userData: userSession.loadUserData() });
+      }
+    }
     return (
-      <div className="site-wrapper">
-        <div className="site-wrapper-inner">
-          { !userSession.isUserSignedIn() ?
-            <Signin userSession={userSession} handleSignIn={ this.handleSignIn } />
-            : <Profile userSession={userSession} handleSignOut={ this.handleSignOut } />
-          }
+      <Connect authOptions={authOptions}>
+        <div className="site-wrapper">
+          <div className="site-wrapper-inner">
+            { !userData ? <Signin /> : <Profile userData={userData} handleSignOut={ this.handleSignOut } /> }
+          </div>
         </div>
-      </div>
+      </Connect>
     );
   }
 
@@ -41,6 +50,8 @@ export default class App extends Component {
         window.history.replaceState({}, document.title, "/")
         this.setState({ userData: userData})
       });
+    } else if (userSession.isUserSignedIn()) {
+      this.setState({ userData: userSession.loadUserData() });
     }
   }
 }
