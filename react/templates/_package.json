@@ -17,6 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "blockstack": "^19.2.5",
+    "@blockstack/connect": "^2.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^4.3.1",
