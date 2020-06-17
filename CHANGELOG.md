@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.0 - June 17, 2020
+
+- Integration with `@blockstack/connect` library
+
 ## 0.7.0 - August 6, 2019
 - Added Vue.js generator. 
 - Updated React generator to use `react-scripts`. 
